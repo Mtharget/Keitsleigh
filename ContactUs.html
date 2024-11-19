@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Loader Element (Initially Hidden) -->
+<div id="loader" class="loader" style="display: none;">
+    <i class="fas fa-spinner fa-spin"></i> Loading...
+</div>
+
+<!-- Link that triggers the loader -->
+<a href="#" id="loadLink">Click Me</a>
+
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo">
+            </a>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="AboutUs.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Admission.html">Admission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="News.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+                <span class="contact-number ms-3">
+                    <i class="fas fa-phone-alt"></i> 031 201 8014
+                </span>
+            </div>
+        </div>
+    </nav>
+
+<section id="contact-us" class="contact-us-section">
+    <div class="container">
+        <div class="contact-header">
+            <h2 class="animated-title">Get In Touch</h2>
+            <p class="animated-subtitle">We’d love to hear from you! Let us know how we can assist you.</p>
+        </div>
+        <div class="contact-content">
+            <!-- Contact Cards -->
+            <div class="contact-cards">
+                <div class="contact-card animated-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Our Location</h3>
+                    <p>123 Keitsleigh Avenue, Durban</p>
+                </div>
+                <div class="contact-card animated-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:0312018014">031 201 8014</a></p>
+                </div>
+                <div class="contact-card animated-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:info@keitsleighschool.com">info@keitsleighschool.com</a></p>
+                </div>
+            </div>
+            <!-- Contact Form -->
+            <div class="contact-form-container animated-form">
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-container footer-content">
+            <div class="footer-logo">
+                <div class="logo-container">
+                    <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo" class="logo"
+                        style="height: 50px;">
+                </div>
+                <p class="footer-description">Ketsleigh Primary School was founded on the 18th of January 1925 in Keits
+                    Avenue, Durban.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Support Links</h3>
+             <ul>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="Admission.html">Admissions</a></li>
+                    <li><a href="News.html">News</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="ContactUs.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Call us directly? </p>
+                <p><a href="tel:0312018014">031 201 8014</a></p>
+                </p>
+                <p>Need support?</p>
+                <p><a href="mailto:ketsleighschool@gmail.com">ketsleighschool@gmail.com</a></p>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Subscribe to our newsletter to get the latest news.</p>
+                <form action="#" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms and conditions</a>
+            <a href="#">Copyright</a>
+        </div>
+    </footer>
+
+    <script src="sc"></script>
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

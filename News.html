@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Loader Element (Initially Hidden) -->
+<div id="loader" class="loader" style="display: none;">
+    <i class="fas fa-spinner fa-spin"></i> Loading...
+</div>
+
+<!-- Link that triggers the loader -->
+<a href="#" id="loadLink">Click Me</a>
+
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo">
+            </a>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AboutUs.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ADmission.html">Admission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"href="News.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+                <span class="contact-number ms-3">
+                    <i class="fas fa-phone-alt"></i> 031 201 8014
+                </span>
+            </div>
+        </div>
+    </nav>
+<div class="container py-5" style="margin-top: 50px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    <div class="text-center mb-5">
+        <h2 class="font-weight-bold">OUR LATEST NEW</h2>
+        <p>STAY UP TO DATE WITH WHAT'S HAPPENING IN OUR SCHOOL</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- First News Card -->
+        <div class="col-md-4 fade-in">
+            <div class="card">
+                <img src="./images/pic1.png" class="card-img-top" alt="News Image">
+                <div class="card-body">
+                    <h5 class="card-title">New Art Program Launch</h5>
+                    <p class="card-text">We are excited to announce the launch of a new art program.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="date">30 August 2024</span>
+                    <div class="like">
+                        <i class="fas fa-heart"></i><span>65</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second News Card -->
+        <div class="col-md-4 fade-in">
+            <div class="card">
+                <img src="./images/pic2.png" class="card-img-top" alt="News Image">
+                <div class="card-body">
+                    <h5 class="card-title">Enhanced Digital Learning Tools</h5>
+                    <p class="card-text">Keitsleigh Primary has introduced new digital tools to support blended
+                        learning.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="date">28 August 2024</span>
+                    <div class="like">
+                        <i class="fas fa-heart"></i><span>25</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third News Card -->
+        <div class="col-md-4 fade-in">
+            <div class="card">
+                <img src="./images/pic3.png" class="card-img-top" alt="News Image">
+                <div class="card-body">
+                    <h5 class="card-title">Student-Led Learning Initiatives</h5>
+                    <p class="card-text">This term, we are excited to introduce student-led projects that encourage
+                        independent research.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="date">26 August 2024</span>
+                    <div class="like">
+                        <i class="fas fa-heart"></i><span>30</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-container footer-content">
+            <div class="footer-logo">
+                <div class="logo-container">
+                    <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo" class="logo"
+                        style="height: 50px;">
+                </div>
+                <p class="footer-description">Ketsleigh Primary School was founded on the 18th of January 1925 in Keits
+                    Avenue, Durban.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Support Links</h3>
+            <ul>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Admission.html">Admissions</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="ContactUs.html">Contact</a></li>
+            </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Call us directly? </p>
+                <p><a href="tel:0312018014">031 201 8014</a></p>
+                </p>
+                <p>Need support?</p>
+                <p><a href="mailto:ketsleighschool@gmail.com">ketsleighschool@gmail.com</a></p>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Subscribe to our newsletter to get the latest news.</p>
+                <form action="#" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms and conditions</a>
+            <a href="#">Copyright</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
