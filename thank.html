@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General styling */
+        body {
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #333;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+
+    <!-- Star container -->
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <!-- Thank You Message Container -->
+    <div class="Container">
+        <!-- School Logo -->
+        <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo" class="logo"> <!-- Replace "logo.png" with your actual logo path -->
+
+        <!-- School Name -->
+        <div class="school-name">Ketsleigh Primary School</div> <!-- Replace with your school's name -->
+
+        <h3>Congratulations!</h3>
+        <p>Your application is in progress. We will notify you soon.</p>
+        <p id="countdown">Redirecting you to the home page in 7 seconds...</p>
+    </div>
+
+    <script>
+        // Countdown logic
+        let countdown = 7;
+        const countdownElement = document.getElementById('countdown');
+
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = `Redirecting in ${countdown} seconds...`;
+
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = 'index.html'; // Redirect after 5 seconds
+            }
+        }, 1000); // Update every second
+    </script>
+
+</body>
+
+</html>
