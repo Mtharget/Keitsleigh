@@ -2,36 +2,39 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
+  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keitsleigh Primary School Contact Us</title>
+<title>Keitsleigh Primary School Gallery</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="Get in touch with Keitsleigh Primary School for inquiries, admissions, or general information. Find our contact details, location, and communication channels.">
-<meta name="keywords" content="Keitsleigh Primary School contact, school phone number, school email, address, admissions inquiries, communication">
+<meta name="description" content="Explore the vibrant and memorable moments captured at Keitsleigh Primary School. View our gallery showcasing student activities, events, and achievements.">
+<meta name="keywords" content="Keitsleigh Primary School Gallery, school photos, student activities, events, achievements, school memories">
 <meta name="author" content="Keitsleigh Primary School">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph Meta Tags for Social Media -->
-<meta property="og:title" content="Keitsleigh Primary School Contact Us">
-<meta property="og:description" content="Reach out to Keitsleigh Primary School for all inquiries. View our contact details and location here.">
+<meta property="og:title" content="Keitsleigh Primary School Gallery">
+<meta property="og:description" content="A visual showcase of Keitsleigh Primary School's events, activities, and student achievements.">
 <meta property="og:image" content="https://keitsleighprimary.co.za/images/logo.png">
-<meta property="og:url" content="https://keitsleighprimary.co.za/contact.html">
+<meta property="og:url" content="https://keitsleighprimary.co.za/gallery.html">
 <meta property="og:type" content="website">
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Keitsleigh Primary School Contact Us">
-<meta name="twitter:description" content="Have questions about admissions or school programs? Contact Keitsleigh Primary School directly.">
+<meta name="twitter:title" content="Keitsleigh Primary School Gallery">
+<meta name="twitter:description" content="Browse through the cherished moments and activities of Keitsleigh Primary School.">
 <meta name="twitter:image" content="https://keitsleighprimary.co.za/images/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="../images/logo.png">
 
 <!-- External Stylesheets -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-    <link rel="icon" type="image/x-icon" href="../images/logo.png">
-    
-    
+
+
+    <link rel="stylesheet" href="style.css">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNZ70BR7KQ"></script>
 <script>
@@ -41,12 +44,10 @@
 
   gtag('config', 'G-NNZ70BR7KQ');
 </script>
-
-    <link rel="stylesheet" href="style.css">
 </head>
 <style>
-      
-        h2 {
+   
+          h2 {
             text-align: center;
             color: #333;
         }
@@ -85,6 +86,9 @@
             color: red;
             margin-top: 10px;
         }
+
+
+
 </style>
 
 <!-- Loader Element (Initially Hidden) -->
@@ -94,6 +98,7 @@
 
 <!-- Link that triggers the loader -->
 <a href="#" id="loadLink">Click Me</a>
+
 
 <body>
     <!-- Responsive Navbar -->
@@ -129,7 +134,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                        <a class="nav-link active" href="Gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Sport.html">Sport</a>
@@ -138,7 +143,7 @@
                         <a class="nav-link" href="fees.html">Fees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="ContactUs.html">Contact Us</a>
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn enroll-now-btn" href="Admission.html">Enrol Now</a>
@@ -152,56 +157,143 @@
     </nav>
 
 
-<section id="contact-us" class="contact-us-section">
+    <header class="about-gallery">
+        <h1>Gallery</h1>
+    </header>
+
+
+
+
+<!-- New Interactive Gallery Section -->
+<section class="interactive-gallery-section py-5" style="margin-top: 100px;">
     <div class="container">
-        <div class="contact-header" style="margin-top: 50px;">
-            <h2 class="animated-title">Get In Touch</h2>
-            <p class="animated-subtitle">We’d love to hear from you! Let us know how we can assist you.</p>
-        </div>
-        <div class="contact-content">
-            <!-- Contact Cards -->
-            <div class="contact-cards">
-                <div class="contact-card animated-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Our Location</h3>
-                    <p>28 Keits Avenue, Berea 4001
-</p>
-                </div>
-                <div class="contact-card animated-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <h3>Call Us</h3>
-                    <p><a href="tel:0312018014">031 201 8014</a></p>
-                </div>
-                <div class="contact-card animated-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email Us</h3>
-                    <p><a href="mailto:admin@keitsleighprimary.co.za">info@keitsleighprimary.co.za</a></p>
+        <h2 class="text-center gallery-title mb-5">We Love to Keep Our Memories Here</h2>
+        <div class="interactive-gallery-grid">
+            <div class="interactive-gallery-item" data-aos="zoom-in">
+                <img src="./SchoolImages/DSC08941.jpg" alt="Gallery Image" class="interactive-gallery-image" loading="lazy">
+                <div class="interactive-gallery-overlay">
+                    <p class="interactive-gallery-text">Memorable Event #1</p>
+                    <button class="view-more-btn" onclick="alert('Viewing details for Memorable Event #1!')">View
+                        More</button>
                 </div>
             </div>
-            <!-- Contact Form -->
-            <div class="contact-form-container animated-form">
-                <form class="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+            <div class="interactive-gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                <img src="./SchoolImages/Academics.jpg" alt="Gallery Image" class="interactive-gallery-image" loading="lazy">
+                <div class="interactive-gallery-overlay">
+                    <p class="interactive-gallery-text">Memorable Event #2</p>
+                    <button class="view-more-btn" onclick="alert('Viewing details for Memorable Event #2!')">View
+                        More</button>
+                </div>
+            </div>
+            <div class="interactive-gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                <img src="./SchoolImages/Sport2.jpg" alt="Gallery Image" class="interactive-gallery-image" loading="lazy">
+                <div class="interactive-gallery-overlay">
+                    <p class="interactive-gallery-text">Memorable Event #3</p>
+                    <button class="view-more-btn" onclick="alert('Viewing details for Memorable Event #3!')">View
+                        More</button>
+                </div>
+            </div>
+            <div class="interactive-gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                <img src="./SchoolImages/DSC08932.jpg" alt="Gallery Image" class="interactive-gallery-image" loading="lazy">
+                <div class="interactive-gallery-overlay">
+                    <p class="interactive-gallery-text">Memorable Event #4</p>
+                    <button class="view-more-btn" onclick="alert('Viewing details for Memorable Event #4!')">View
+                        More</button>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 
+    <div id="footer"></div>
+    <script src="footer.js"></script>
 
+ 
+    
+    <script>
+                const apiBaseURL = 'http://kzdsolutions.co.za:2000/api';
 
-
-<div id="footer"></div>
-<script src="footer.js"></script>
-
-
-    <script src="sc"></script>
+        const galleryGrid = document.getElementById('galleryGrid');
+        let images = [];  // This will store the images fetched from the backend
+        let currentIndex = 0;
+    
+        // Fetch gallery images from the server
+        async function fetchGallery() {
+            try {
+                const response = await fetch(`${apiBaseURL}/Schoolgallery`); 
+                const galleryImages = await response.json();
+                images = galleryImages; // Store the images in the array
+    
+                // Populate the gallery grid with the fetched images
+                galleryGrid.innerHTML = '';
+                images.forEach((image, index) => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.classList.add('gallery-item');
+                    galleryItem.innerHTML = `
+                        <img src="${image.image_path}" alt="school image" >
+                        <button class="view-details-btn" data-index="${index}">View Details</button>
+                    `;
+                    galleryGrid.appendChild(galleryItem);
+                });
+    
+                // Attach event listeners to view details buttons
+                const viewButtons = document.querySelectorAll('.view-details-btn');
+                viewButtons.forEach((btn) => {
+                    btn.addEventListener('click', (event) => {
+                        currentIndex = event.target.getAttribute('data-index');
+                        openModal(currentIndex);
+                    });
+                });
+    
+            } catch (error) {
+                console.error('Error fetching gallery images:', error);
+            }
+        }
+    
+        // Function to open the image modal
+        function openModal(index) {
+            const modal = document.createElement('div');
+            modal.className = 'image-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <img src="${images[index].image_path}" alt="${images[index].image_name}">
+                    <button class="prev-btn">&laquo; Previous</button>
+                    <button class="next-btn">Next &raquo;</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+    
+            // Event listeners for modal navigation and closing
+            const closeBtn = modal.querySelector('.close-btn');
+            const nextBtn = modal.querySelector('.next-btn');
+            const prevBtn = modal.querySelector('.prev-btn');
+    
+            closeBtn.addEventListener('click', () => modal.remove());
+            nextBtn.addEventListener('click', () => navigateModal(1));
+            prevBtn.addEventListener('click', () => navigateModal(-1));
+    
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.remove();
+            });
+        }
+    
+        // Function to navigate the modal (Previous/Next image)
+        function navigateModal(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            const modalImg = document.querySelector('.image-modal img');
+            modalImg.src = images[currentIndex].image_path;
+            modalImg.alt = images[currentIndex].image_name;
+        }
+    
+        // Load gallery images when the page is loaded
+        window.onload = fetchGallery;
+    </script>
+    
     <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- modal to track application -->
     
     
@@ -275,28 +367,27 @@
         }
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarNav');
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        const navbarCollapse = document.querySelector('#navbarNav');
+            navbarToggler.addEventListener('click', function () {
+                // Toggle the 'no-scroll' class on the body
+                document.body.classList.toggle('no-scroll', navbarCollapse.classList.contains('show'));
+            });
 
-        navbarToggler.addEventListener('click', function () {
-            // Toggle the 'no-scroll' class on the body
-            document.body.classList.toggle('no-scroll', navbarCollapse.classList.contains('show'));
+            // Listen for when the collapse menu is hidden
+            navbarCollapse.addEventListener('hidden.bs.collapse', function () {
+                document.body.classList.remove('no-scroll');
+            });
+
+            // Listen for when the collapse menu is shown
+            navbarCollapse.addEventListener('shown.bs.collapse', function () {
+                document.body.classList.add('no-scroll');
+            });
         });
-
-        // Listen for when the collapse menu is hidden
-        navbarCollapse.addEventListener('hidden.bs.collapse', function () {
-            document.body.classList.remove('no-scroll');
-        });
-
-        // Listen for when the collapse menu is shown
-        navbarCollapse.addEventListener('shown.bs.collapse', function () {
-            document.body.classList.add('no-scroll');
-        });
-    });
-</script>
+    </script>
 
 </body>
 

@@ -7,47 +7,11 @@
     <link rel="icon" type="image/x-icon" href="../images/logo.png">
 
     <title>Keitsleigh Primary School Admission</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Learn about the Keitsleigh Primary School admission process, requirements, and application guidelines. Start your child's educational journey with us.">
-    <meta name="keywords"
-        content="Keitsleigh Primary School admission, school registration, enrollment, application process, admission requirements">
-    <meta name="author" content="Keitsleigh Primary School">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="Keitsleigh Primary School Admission">
-    <meta property="og:description"
-        content="Find all the details about admissions at Keitsleigh Primary School, including registration, enrollment, and requirements.">
-    <meta property="og:image" content="https://keitsleighprimary.co.za/images/logo.png">
-    <meta property="og:url" content="https://keitsleighprimary.co.za/admission.html">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Keitsleigh Primary School Admission">
-    <meta name="twitter:description"
-        content="Start your child's journey at Keitsleigh Primary School. Learn about our admission process and requirements.">
-    <meta name="twitter:image" content="https://keitsleighprimary.co.za/images/logo.png">
-
-    <!-- External Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNZ70BR7KQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-NNZ70BR7KQ');
-    </script>
 
 
 </head>
@@ -72,7 +36,7 @@
 
     button {
         padding: 10px;
-        background-color: #007BFF;
+        background-color: #007bff;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -151,16 +115,16 @@
                         <a class="btn enroll-now-btn" href="Admission.html">Enrol Now</a>
                     </li>
                 </ul>
-            <span class="contact-number ms-3 d-none d-lg-inline">
-                <img src="./SchoolImages/Icon.png" alt="Phone Icon" width="20" height="20"> 031 201 8014
-            </span>
+                <span class="contact-number ms-3 d-none d-lg-inline">
+                    <i class="fas fa-phone-alt"></i> 031 201 8014
+                </span>
             </div>
         </div>
     </nav>
 
 
 
-    <div class="Containerss" style="margin-top: 150px;">
+    <div class="Containerss" style="margin-top: 100px;">
         <h2>Keitsleigh Application Form</h2>
         <!-- Countdown to application closure -->
         <div id="countdownContainer" class="countdown-container">
@@ -208,8 +172,7 @@
                 <li>You are required to arrive with the learner between 8:00 and 08:30am for assessment.</li>
                 <li>Assessment days are Tuesdays, Wednesdays, or Thursdays.</li>
                 <li>Application forms will be availed to you after the assessment.</li>
-                <li>
-                    A non-refundable assessment fee of R400.00 once application is accepted.</li>
+                <li>A non-refundable application fee of R400.00 must accompany this application.</li>
                 <li><strong>NB:</strong> No assessment will be carried out without copies of all the required documents.
                 </li>
                 <li>Your child must turn 5 before 30 June 2025 for admission to Grade R (No exceptions).</li>
@@ -784,48 +747,29 @@
             let isValid = true;
 
 
-            // File inputs for size validation
-            const fileSizeAll = [
+            // File inputs
+            const fileInputs = [
                 { id: 'parentDoc', label: "Parents/Guardian ID Books" },
                 { id: 'proofOfAddressFile', label: "Proof of Address" },
                 { id: 'salaryAdviceFile', label: "Salary Advice Document" },
                 { id: 'bankStatementFile', label: "Bank Statement" }
             ];
 
-            // File inputs for required validation
-            const fileInputs = [
-                { id: 'parentDoc', label: "Parents/Guardian ID Books/Passport ID" },
-                { id: 'proofOfAddressFile', label: "Proof of Address" },
-            ];
 
-            // Validate file size
-            fileSizeAll.forEach(({ id, label }) => {
-                const fileInput = document.getElementById(id);
-                if (fileInput.files.length > 0) { // Check if a file is selected
-                    const file = fileInput.files[0];
-                    if (file.size > 1024 * 1024) { // Check file size
-                        errorContainer.innerHTML += `${label} must be less than 1MB.<br>`;
-                        isValid = false;
-                    }
-                }
-            });
-
-            // Validate file uploads (required check)
+            // Validate file uploads
             fileInputs.forEach(({ id, label }) => {
                 const fileInput = document.getElementById(id);
-                if (fileInput.files.length === 0) { // Check if a file is selected
+                if (fileInput.files.length === 0) {
                     errorContainer.innerHTML += `Please upload the ${label}.<br>`;
                     isValid = false;
                 } else {
                     const file = fileInput.files[0];
-                    if (file.size > 1024 * 1024) { // Check file size again for required files
+                    if (file.size > 1024 * 1024) {
                         errorContainer.innerHTML += `${label} must be less than 1MB.<br>`;
                         isValid = false;
                     }
                 }
             });
-
-
             if (!parentName) {
                 errorContainer.innerHTML += 'Please enter the Parent/Guardian Name.<br>';
                 isValid = false;
@@ -858,7 +802,16 @@
                 isValid = false;
             }
 
+            if (!salaryAdviceFile) {
+                errorContainer.innerHTML += 'Please upload the Salary Advice File Document .<br>';
+                isValid = false;
+            }
 
+
+            if (!bankStatementFile) {
+                errorContainer.innerHTML += 'Please upload the Bank Statement File Document .<br>';
+                isValid = false;
+            }
 
 
             if (!proofOfAddressFile) {
@@ -989,7 +942,6 @@
             );
         }
 
-
         // Function to validate learner form
         async function validateLearnerForm() {
             const errorContainer = document.getElementById('learnerFormErrors');
@@ -1072,14 +1024,34 @@
             }
 
 
+            if (!previousSchoolRemoval) {
+                errorContainer.innerHTML += 'Please upload the Removal Document.<br>';
+                isValid = false;
+            }
 
             if (!learnerIDCard) {
                 errorContainer.innerHTML += 'Please upload the Birth Certificate File  Document.<br>';
                 isValid = false;
             }
 
+            if (!immunizationCardFile) {
+                errorContainer.innerHTML += 'Please upload the Immunization Card File Document.<br>';
+                isValid = false;
+            }
 
+            if (!previousAssessmentsFile) {
+                errorContainer.innerHTML += 'Please upload the Previous Assessments File Document.<br>';
+                isValid = false;
+            }
+            if (!financialClearanceFile) {
+                errorContainer.innerHTML += 'Please upload the financial Clearance File Document.<br>';
+                isValid = false;
+            }
 
+            if (!passportPhotoFile) {
+                errorContainer.innerHTML += 'Please upload the Passport Photo File Document.<br>';
+                isValid = false;
+            }
 
 
             // Check learner ID asynchronously
@@ -1108,7 +1080,6 @@
                 showNextSection('emailSection');
             }
         }
-
 
 
         // Function to load parent data from sessionStorage

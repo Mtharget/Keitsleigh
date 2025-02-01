@@ -78,3 +78,64 @@ document.querySelector('.scroll-arrow a').addEventListener('click', function (ev
         behavior: 'smooth'
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const footerContainer = document.getElementById("footer");
+
+    if (footerContainer) {
+        fetch("footer.html")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Failed to load footer");
+                }
+                return response.text();
+            })
+            .then((footerHTML) => {
+                footerContainer.innerHTML = footerHTML;
+
+                // Initialize modal functionality after footer is loaded
+                const modalLinks = document.querySelectorAll(".modal-link");
+                const modal = document.getElementById("modal");
+                const modalTitle = document.getElementById("modal-title");
+                const modalBody = document.getElementById("modal-body");
+
+                modalLinks.forEach((link) => {
+                    link.addEventListener("click", (event) => {
+                        event.preventDefault();
+                        const modalContent = link.dataset.modal;
+
+                        // Set modal content based on the link clicked
+                        switch (modalContent) {
+                            case "privacy-policy":
+                                modalTitle.textContent = "Privacy Policy";
+                                modalBody.textContent = "Here is the Privacy Policy...";
+                                break;
+                            case "terms-conditions":
+                                modalTitle.textContent = "Terms and Conditions";
+                                modalBody.textContent = "Here are the Terms and Conditions...";
+                                break;
+                            case "copyright":
+                                modalTitle.textContent = "Copyright";
+                                modalBody.textContent = "Copyright information...";
+                                break;
+                        }
+
+                        modal.style.display = "block";
+                    });
+                });
+
+                // Close the modal
+                document.querySelector(".close-btn").addEventListener("click", () => {
+                    modal.style.display = "none";
+                });
+
+                window.addEventListener("click", (event) => {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            })
+            .catch((error) => {
+                console.error("Error loading footer:", error);
+            });
+    }
+});

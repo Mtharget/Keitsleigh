@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copyright and Privacy Policy - Keitsleigh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.fade-in {
+            opacity: 1;
+        }
+
+        .terms-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 10px 20px;
+        }
+
+        .breadcrumb {
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #0900FF;
+            position: relative;
+            margin-top: 70px
+        }
+
+        .breadcrumb a:after {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #555;
+            border-bottom: 2px solid #555;
+            transform: rotate(-45deg);
+            margin: 0 8px;
+        }
+
+        .breadcrumb a:last-child:after {
+            content: "";
+        }
+
+        h1 {
+            color: #000;
+        }
+
+        section {
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h2 {
+            color: #000;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        section h2 i {
+            color: #0900FF;
+            margin-right: 10px;
+        }
+
+        section p {
+            text-align: left;
+        }
+
+        .btn-enroll {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0900FF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn-enroll:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("fade-in");
+
+            const sections = document.querySelectorAll("section");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="/">Home</a><a href="#">Copyright and Privacy Policy</a>
+        </nav>
+    </header>
+    <div class="terms-container">
+        <h1>Copyright and Privacy Policy</h1>
+
+        <section>
+            <h2><i class="fas fa-copyright"></i> Copyright</h2>
+            <p>All content, including but not limited to the design, text, graphics, logos, images, audio clips, video
+                clips, and software, on this website is the property of Keitsleigh Primary School or its licensors and
+                is protected by international copyright and trademark laws. Unauthorized use of any content is strictly
+                prohibited.</p>
+            <p>You may not copy, reproduce, distribute, transmit, display, perform, or create derivative works of any of
+                the content without the express written permission of Keitsleigh Primary School. Any unauthorized use of
+                the content may result in legal action.</p>
+            <p>Keitsleigh Primary School reserves the right to modify or remove any content from this website at its
+                discretion. Any rights not expressly granted herein are reserved.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-user-shield"></i> Privacy Policy</h2>
+            <p>At Keitsleigh Primary School, we are committed to protecting the privacy and confidentiality of the
+                personal information we collect. This privacy policy describes how we collect, use, and protect your
+                personal data when you visit our website, interact with our services, or enroll your child at our
+                school.</p>
+            <h3>1. Information We Collect</h3>
+            <p>We collect personal information, including but not limited to:</p>
+            <ul>
+                <li>Student details (name, age, grade level, etc.)</li>
+                <li>Parent/guardian contact information (name, phone number, email, etc.)</li>
+                <li>Health and emergency contact information</li>
+                <li>Enrollment details and educational preferences</li>
+            </ul>
+            <h3>2. How We Use Your Information</h3>
+            <p>Your information is used for the following purposes:</p>
+            <ul>
+                <li>To process your child’s enrollment and ensure their educational needs are met.</li>
+                <li>To communicate with parents/guardians regarding school activities, events, and updates.</li>
+                <li>To maintain accurate student records for educational, administrative, and legal purposes.</li>
+                <li>To comply with local education laws and regulations.</li>
+            </ul>
+            <h3>3. Data Security</h3>
+            <p>We implement reasonable security measures to protect your personal information from unauthorized access,
+                disclosure, alteration, and destruction. Only authorized personnel have access to sensitive data, and
+                all data is stored in a secure manner.</p>
+            <h3>4. Data Sharing</h3>
+            <p>We do not share your personal information with third parties except as follows:</p>
+            <ul>
+                <li>When required by law or to comply with legal obligations.</li>
+                <li>To third-party service providers who assist us in operating our services (e.g., IT service
+                    providers), who are required to maintain the confidentiality of your data.</li>
+                <li>In the event of a merger, acquisition, or sale of all or part of the school’s assets.</li>
+            </ul>
+            <h3>5. Cookies and Tracking Technologies</h3>
+            <p>Our website may use cookies and similar tracking technologies to enhance user experience. Cookies help us
+                remember your preferences and improve website functionality. You can choose to disable cookies through
+                your browser settings, but please note that some features of the website may not work properly without
+                them.</p>
+            <h3>6. Your Rights</h3>
+            <p>As a parent or guardian, you have the right to:</p>
+            <ul>
+                <li>Access and update your child's personal data.</li>
+                <li>Request the deletion of your child’s data, subject to certain legal limitations.</li>
+                <li>Withdraw consent for data collection (where applicable) at any time.</li>
+            </ul>
+            <p>If you wish to exercise any of these rights, or if you have any questions or concerns about how we handle
+                your data, please contact us using the details below.</p>
+            <h3>7. Changes to This Privacy Policy</h3>
+            <p>We reserve the right to update or modify this Privacy Policy at any time. Any changes will be posted on
+                this page, and we will notify parents/guardians of significant changes via email or other appropriate
+                means.</p>
+            <h3>8. Contact Information</h3>
+            <p>If you have any questions or concerns about our Privacy Policy, please contact the school administration
+                at:</p>
+            <p><strong>Email:</strong> [info@keitsleighprimary.co.za]</p>
+            <p><strong>Phone:</strong> [031 201 8014]</p>
+        </section>
+
+        <a href="Admission.html" class="btn-enroll">Enrol Now</a>
+    </div>
+
+</body>
+
+</html>

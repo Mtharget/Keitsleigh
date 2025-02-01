@@ -2,245 +2,835 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional School Website</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keitsleigh Primary School</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Welcome to Keitsleigh Primary School! We are dedicated to providing quality education, nurturing young minds, and shaping future leaders.">
+<meta name="keywords" content="Keitsleigh Primary School, primary education, quality education, academic excellence, South Africa schools">
+<meta name="author" content="Keitsleigh Primary School">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph Meta Tags for Social Media -->
+<meta property="og:title" content="Keitsleigh Primary School">
+<meta property="og:description" content="Discover quality education at Keitsleigh Primary School, fostering academic and personal growth for young learners.">
+<meta property="og:image" content="https://keitsleighprimary.co.za/images/logo.png">
+<meta property="og:url" content="https://keitsleighprimary.co.za">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keitsleigh Primary School">
+<meta name="twitter:description" content="Providing quality primary education and nurturing future leaders.">
+<meta name="twitter:image" content="https://keitsleighprimary.co.za/images/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://keitsleighprimary.co.za/images/logo.png">
+
+<!-- External Stylesheets -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ 
+
+    <!-- <link rel="icon" type="image/x-icon" href="./images/logo.png"> -->
+    <link rel="icon" type="image/png" href="../images/logo.png">
     
-   <link rel="stylesheet" href="style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NNZ70BR7KQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NNZ70BR7KQ');
+</script>
+
+
+    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+     h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #a78913;
+        }
+        .status-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #e7f3fe;
+            display: none; /* Initially hidden */
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
 
-<!-- Loader Element (Initially Hidden) -->
-<div id="loader" class="loader" style="display: none;">
-    <i class="fas fa-spinner fa-spin"></i> Loading...
-</div>
+      .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
 
-<!-- Link that triggers the loader -->
-<a href="#" id="loadLink">Click Me</a>
+
+  
+
+  /* Media query for phone sizes */
+  @media (max-width: 600px) {
+    .btn {
+      width: 70%;  /* Reduced width of buttons even more on mobile */
+      font-size: 14px; /* Slightly smaller font size for phones */
+      padding: 6px 12px; /* Adjust padding to fit better on smaller screens */
+    }
+  }
+  .no-scroll {
+    overflow: hidden;
+    height: 100%; /* Prevent vertical scroll */
+}
 
 
+
+
+
+
+        
+
+</style>
 <body>
-<!-- Navbar -->
+<!-- Responsive Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo">
+            <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo" loading="lazy">
         </a>
-        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fa-solid fa-bars"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link active" href="index.html">Home</a> <!-- Set "active" for the current page -->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="AboutUs.html">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Admission.html">Admission</a>
+                    <a class="nav-link" href="Academic.html">Academics</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="News.html">News</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="admissionDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Admission
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
+                        <li><a class="dropdown-item" href="Admission.html">Apply Now</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#trackApplicationModal">Track Application</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Gallery.html">Gallery</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="Sport.html">Sport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fees.html">Fees</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="ContactUs.html">Contact Us</a>
                 </li>
+                <li class="nav-item">
+                    <a class="btn enroll-now-btn" href="Admission.html">Enrol Now</a>
+                </li>
             </ul>
-            <span class="contact-number ms-3">
-                <i class="fas fa-phone-alt"></i> 031 201 8014
-            </span>
+        <span class="contact-number ms-3 d-none d-lg-inline">
+            <img src="./SchoolImages/Icon.png" alt="Phone Icon" width="20" height="20"> 031 201 8014
+        </span>
+
         </div>
     </div>
 </nav>
-
-    <!-- Hero Section -->
+<!-- Hero Section -->
 <section class="hero">
     <div class="hero-text">
-        <h1>Motivated by Love<br>Evident in Service</h1>
-        <p>Your pathway to excellence</p>
-        <a href="#next-section" class="btn">Read more</a>
-        <!-- Scroll Arrow -->
-        <div class="scroll-arrow">
-            <a href="#next-section"><i class="fas fa-angle-down"></i></a>
-        </div>
+        <h1 style="color: #0900FF;">Motivated by Love<br>Evident in Service</h1>
+        <h2 style="color:#0900FF;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Welcome to
+            Keitsleigh Primary School!</h2>
+        <a href="#next-section" class="btn"
+            style=" color: white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Read
+            more</a>
+        <a href="Admission.html" class="btn" style="background-color: #007bff;color: white;">Enrol Now</a>
     </div>
-</section>
-<section class="Header" >
-<div class="header" id="next-section">
-        <div class="title">Explore Our Services</div>
 
-    <div class="sub-title">What We Offer</div>
-</div>
-</section>
+    <!-- Image container -->
+    <div class="hero-images">
+        <div class="hero-image lazy-bg" data-bg="./SchoolImages/DSC08889.jpg"></div>
+        <div class="hero-image lazy-bg" data-bg="./SchoolImages/DSC08923.jpg"></div>
+        <div class="hero-image lazy-bg" data-bg="./SchoolImages/DSC08927.jpg"></div>
+        <div class="hero-image lazy-bg" data-bg="./SchoolImages/DSC08932.jpg"></div>
+        <div class="hero-image lazy-bg" data-bg="./SchoolImages/DSC08959.jpg"></div>
+        <div class="hero-image lazy-bg" data-bg="./SchoolImages/DSC08941.jpg"></div>
+        <div class="hero-image lazy-bg" data-bg="./SchoolImages/DSC08977.jpg"></div>
+        <div class="hero-image lazy-bg" data-bg="./SchoolImages/DSC08979.jpg"></div>
+        <div class="hero-image lazy-bg" data-bg="./SchoolImages/DSC08982.jpg"></div>
+        <div class="hero-image lazy-bg" data-bg="./SchoolImages/DSC09052.jpg"></div>
+    </div>
 
-
-<section class="service" >
-<!-- Services Section --><section class="service">
-    <div class="services">
-        <!-- Service 1 -->
-        <div class="service-card">
-            <img src="./images/demo-startup-01.jpg.png" alt="Curriculum">
-            <div class="service-info">
-                <h3>Curriculum</h3>
-                <p>We understand the significant responsibility entrusted to us to help shape the future of the young
-                    people in our care.</p>
-                <button class="explore-button">
-                    Explore Services
-                    <span>&#10140;</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-card">
-            <img src="./images/demo-startup-02.jpg.png" alt="Holistic Education">
-            <div class="service-info">
-                <h3>Holistic Education</h3>
-                <p>Our schools offer excellent academic programs complemented by and based on Biblical principles and
-                    values.</p>
-                <button class="explore-button">
-                    Explore Services
-                    <span>&#10140;</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-card">
-            <img src="./images/demo-startup-03.jpg.png" alt="Physical Exercise">
-            <div class="service-info">
-                <h3>Physical Exercise</h3>
-                <p>Encourage, motivate, and empower children to activate their full potential through physical exercise.
-                </p>
-                <button class="explore-button">
-                    Explore Services
-                    <span>&#10140;</span>
-                </button>
-            </div>
-        </div>
+    <!-- Next and Prev buttons -->
+    <div class="hero-controls">
+        <button id="prevBtn" class="control-btn"><i class="fas fa-chevron-left"></i></button> <!-- Left arrow -->
+        <button id="nextBtn" class="control-btn"><i class="fas fa-chevron-right"></i></button> <!-- Right arrow -->
     </div>
 </section>
 
 
 
+    <section class="Header">
+        <div class="header" id="next-section">
+            <div class="title">Nurturing Young Minds For A Bright Future</div>
 
+            <div class="sub-title">What We Offer</div>
+        </div>
+    </section>
+
+<section class="service">
+    <!-- Services Section -->
+    <section class="service">
+        <div class="services">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <img src="./SchoolImages/Curriculumn.jpg" alt="Curriculum" loading="lazy">
+                <div class="service-info">
+                    <h3>Curriculum</h3>
+                    <p>We understand the significant responsibility entrusted to us to help shape the future of the
+                        young
+                        people in our care.</p>
+                    <button class="explore-button" onclick="window.location.href='Academic.html';">
+                        Explore
+                        <span>&#10140;</span>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <img src="./SchoolImages/Sport2.jpg" alt="DayCare Education" loading="lazy">
+                <div class="service-info">
+                    <h3>DayCare</h3>
+                    <p>"Inspire, Support, and Strengthen Children to Thrive Through Active Play and Learning"</p>
+                <button class="explore-button" onclick="window.location.href='Academic.html';">
+                    Explore
+                    <span>&#10140;</span>
+                </button>
+
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <img src="./SchoolImages/Sport.jpg" alt="Physical Exercise" loading="lazy">
+                <div class="service-info">
+                    <h3>Physical Exercise</h3>
+                    <p>Encourage, motivate, and empower children to activate their full potential through physical
+                        exercise.
+                    </p>
+                <button class="explore-button" onclick="window.location.href='Academic.html';">
+                    Explore
+                    <span>&#10140;</span>
+                </button>
+
+                </div>
+            </div>
+        </div>
+
+
+        
+    </section>
+    <div class="containers about-us-container">
+        <div class="row align-items-center">
+            <!-- About Us Image (Left on large screens, top on smaller screens) -->
+            <div class="col-12 col-md-6 about-us-image scroll-effect">
+<img src="./SchoolImages/school learners.jpg" alt="About Us Image" class="img-fluid" loading="lazy" />
+            </div>
     
-<!-- Footer -->
-<footer class="footer" id="footer">
-    <div class="footer-container footer-content">
-        <div class="footer-logo">
-            <div class="logo-container">
-                <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo" class="logo" style="height: 50px;">
+            <!-- About Us Text (Right on large screens, bottom on smaller screens) -->
+            <div class="col-12 col-md-6 about-us-text scroll-effect">
+                <div class="about-us-title">Why Join Us</div>
+                <div class="about-us-description">
+                    The school has a long history of success and upholds the standards and educational philosophy of the
+                    Seventh-Day Adventist Church. Keitsleigh Primary is a small but vibrant center of learning. By
+                    providing
+                    a
+                    warm, family atmosphere, we endeavor to provide our learners with memorable experiences that will
+                    enrich
+                    their lives.
+                </div>
+                <div class="read-more-button">
+                    <a href="AboutUs.html" class="read-more-text">Read more</a>
+                </div>
+    
+                <div class="read-more-button">
+                    <a href="Admission.html" class="read-more-text">Enrol Now</a>
+                </div>
             </div>
-            <p class="footer-description">Ketsleigh Primary School was founded on the 18th of January 1925 in Keits
-                Avenue, Durban.</p>
-            <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-        <div class="footer-links">
-            <h3>Support Links</h3>
-        <ul>
-            <li><a href="/assets/AboutUs.html">About Us</a></li>
-            <li><a href="/assets/Admission.html">Admissions</a></li>
-            <li><a href="/assets/News.html">News</a></li>
-            <li><a href="/assets/Gallery.html">Gallery</a></li>
-            <li><a href="/assets/ContactUs.html">Contact</a></li>
-        </ul>
-        </div>
-        <div class="footer-contact">
-            <h3>Contact Us</h3>
-            <p>Call us directly? </p>
-            <p><a href="tel:0312018014">031 201 8014</a></p>
-</p>
-            <p>Need support?</p> 
-            <p><a href="mailto:ketsleighschool@gmail.com">ketsleighschool@gmail.com</a></p>
-        </div>
-        <div class="footer-newsletter">
-            <h3>Subscribe to Our Newsletter</h3>
-            <p>Subscribe to our newsletter to get the latest news.</p>
-            <form action="#" method="POST">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Send</button>
-            </form>
+    
         </div>
     </div>
-    <div class="footer-legal">
-        <a href="#">Privacy policy</a>
-        <a href="#">Terms and conditions</a>
-        <a href="#">Copyright</a>
-    </div>
-</footer>
+     <!-- Modal -->
+        <div class="modal fade" id="trackApplicationModal" tabindex="-1" aria-labelledby="trackApplicationModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="trackApplicationModalLabel">Admission Status Tracker</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="trackNumber">Enter Learner ID or Registration Number</label>
+                        <input type="text" id="trackNumber" placeholder="Learner ID or Registration Number" required>
+                        <button id="trackButton" onclick="trackStatus()">Track Status</button>
 
-<script src="scr"></script>
-    <!-- Bootstrap Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-   
+                        <div class="status-container" id="statusContainer">
+                            <h3>Status:</h3>
+                            <p id="statusMessage"></p>
+                            <p class="error" id="errorMessage"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    <div class="custom-container py-1">
+        <div class="custom-row">
+            <!-- Column 1: Visit school -->
+            <div class="custom-col d-flex justify-content-center align-items-center">
+                <div class="custom-text-center">
+                    <div class="custom-icon-container">
+                        <a href="https://maps.app.goo.gl/BorPJzWVuV1H7CcS6" target="_blank">
+    
+                            <i class="fa-solid fa-school fa-2x text-white"></i>
+                        </a>
+                    </div>
+                    <h5 class="custom-title text-warning">Visit school</h5>
+    
+                    <a href="https://maps.app.goo.gl/BorPJzWVuV1H7CcS6" target="_blank">
+                        <p class="custom-paragraph text-white">28 Keits Avenue, Berea, Durban 4001</p>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Column 2: Inquire -->
+            <div class="custom-col d-flex justify-content-center align-items-center">
+                <div class="custom-text-center">
+                    <div class="custom-icon-container">
+                        <a href="ContactUs.html">
+                            <i class="fa-solid fa-phone-volume fa-2x text-white"></i>
+                        </a>
+    
+                    </div>
+                    <h5 class="custom-title text-warning">Inquire</h5>
+                    <p class="custom-paragraph text-white">Call : 031 201 8014</p>
+                </div>
+            </div>
+    
+            <!-- Column 3: Online application -->
+            <div class="custom-col d-flex justify-content-center align-items-center">
+                <div class="custom-text-center">
+                    <div class="custom-icon-container">
+                        <a href="Admission.html">
+                            <i class="fa-solid fa-paper-plane fa-2x text-white"></i>
+                        </a>
+                    </div>
+                    <h5 class="custom-title text-warning">Online application</h5>
+                    <p class="custom-paragraph text-light">Inspired, confident and ready.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container py-5"
+    style="margin-top: 50px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    <div class="text-center mb-5">
+        <h2 class="font-weight-bold">OUR LATEST NEWS</h2>
+        <p>STAY UP TO DATE WITH WHAT'S HAPPENING IN OUR SCHOOL</p>
+    </div>
+
+    <body onload="displayNewsletters()">
+        <div class="row g-4">
+        </div>
+    </body>
+
+</div>
+
+
+
+        <!-- modal to track application -->
+
+      
+
+
+       
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script> -->
+
+
+        <div id="footer"></div>
+        <script src="footer.js"></script>
+
+
+
+        <!-- <script src="scr"></script> -->
+        <!-- Bootstrap Script -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+        <script>
+            document.querySelector('.scroll-arrow a').addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default anchor behavior
+
+                // Smooth scroll with a small distance (e.g., 50px)
+                window.scrollBy({
+                    top: 559,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+
+                // Add the fade-in class after a slight delay for the animation
+                setTimeout(function () {
+                    const section = document.querySelector('.service');
+                    section.classList.add('fade-in');
+                }, 1500);  // Delay before adding fade-in effect to give smooth scroll effect
+            });
+        </script>
+
+        <script>document.querySelector('.scroll-arrow a').addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default anchor behavior
+
+                // Get the current scroll position
+                const start = window.pageYOffset;
+                const target = start + 561; // The target scroll position (adjust this as needed)
+                const distance = target - start;
+                const duration = 2000; // Duration in ms (e.g., 2 seconds for slower scroll)
+
+                let startTime = null;
+
+                // Function to animate the scroll
+                function animateScroll(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const scrollProgress = Math.min(timeElapsed / duration, 1); // Normalize to [0, 1]
+
+                    // Ease-in-out timing function for smoothness
+                    const ease = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+                    // Calculate the current position
+                    const currentPosition = start + (distance * ease(scrollProgress));
+
+                    // Scroll to the current position
+                    window.scrollTo(0, currentPosition);
+
+                    // Continue the animation until the duration is reached
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+
+                // Start the animation
+                requestAnimationFrame(animateScroll);
+            });
+        </script>
+
+        <script>
+            // Highlight the active nav-link
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                    const modal = document.getElementById("modal");
+                    const modalTitle = document.getElementById("modal-title");
+                    const modalBody = document.getElementById("modal-body");
+                    const closeModalButton = document.querySelector(".close-btn");
+
+                    const modalContent = {
+                        "privacy-policy": {
+                            title: "Privacy Policy",
+                            body: "This is the Privacy Policy of Keitsleigh Primary School. We value your privacy and are committed to protecting your personal information."
+                        },
+                        "terms-conditions": {
+                            title: "Terms and Conditions",
+                            body: "These are the Terms and Conditions for using the website. Please read them carefully before proceeding."
+                        },
+                        "copyright": {
+                            title: "Copyright",
+                            body: "All content on this website is copyright © Keitsleigh Primary School. Unauthorized use is prohibited."
+                        }
+                    };
+
+                    // Open modal
+                    document.querySelectorAll(".modal-link").forEach(link => {
+                        link.addEventListener("click", (event) => {
+                            event.preventDefault();
+                            const modalType = link.getAttribute("data-modal");
+
+                            if (modalContent[modalType]) {
+                                modalTitle.textContent = modalContent[modalType].title;
+                                modalBody.textContent = modalContent[modalType].body;
+                                modal.style.display = "block";
+                            }
+                        });
+                    });
+
+                    // Close modal
+                    closeModalButton.addEventListener("click", () => {
+                        modal.style.display = "none";
+                    });
+
+                    // Close modal when clicking outside the modal content
+                    window.addEventListener("click", (event) => {
+                        if (event.target === modal) {
+                            modal.style.display = "none";
+                        }
+                    });
+                });
+
+        </script>
+
+
+
 
     <script>
-        document.querySelector('.scroll-arrow a').addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default anchor behavior
+        function trackStatus() {
+            const trackNumber = document.getElementById('trackNumber').value;
+            const statusContainer = document.getElementById('statusContainer');
+            const statusMessage = document.getElementById('statusMessage');
+            const errorMessage = document.getElementById('errorMessage');
 
-            // Smooth scroll with a small distance (e.g., 50px)
-            window.scrollBy({
-                top: 559,
-                left: 0,
-                behavior: 'smooth'
+            // Clear previous messages
+            statusMessage.innerHTML = '';
+            errorMessage.innerHTML = '';
+
+            if (trackNumber) {
+                fetch('https://app.kzdsolutions.co.za/check-status', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ trackNumber }),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status !== null) {
+                            // Display status if found
+                            statusMessage.innerHTML = `Current status: ${data.status}`;
+                            statusContainer.style.display = 'block';
+                        } else {
+                            // Display error if no records are found
+                            errorMessage.innerHTML = 'No records found for the provided ID or Registration Number.';
+                            statusContainer.style.display = 'block';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        errorMessage.innerHTML = 'An error occurred while fetching the status.';
+                        statusContainer.style.display = 'none';
+                    });
+            } else {
+                errorMessage.innerHTML = 'Please enter a Learner ID or Registration Number.';
+                statusContainer.style.display = 'none';
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarNav');
+
+            navbarToggler.addEventListener('click', function () {
+                // Toggle the 'no-scroll' class on the body
+                document.body.classList.toggle('no-scroll', navbarCollapse.classList.contains('show'));
             });
 
-            // Add the fade-in class after a slight delay for the animation
-            setTimeout(function () {
-                const section = document.querySelector('.service');
-                section.classList.add('fade-in');
-            },1500);  // Delay before adding fade-in effect to give smooth scroll effect
+            // Listen for when the collapse menu is hidden
+            navbarCollapse.addEventListener('hidden.bs.collapse', function () {
+                document.body.classList.remove('no-scroll');
+            });
+
+            // Listen for when the collapse menu is shown
+            navbarCollapse.addEventListener('shown.bs.collapse', function () {
+                document.body.classList.add('no-scroll');
+            });
         });
     </script>
 
-    <script>document.querySelector('.scroll-arrow a').addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default anchor behavior
 
-            // Get the current scroll position
-            const start = window.pageYOffset;
-            const target = start + 561; // The target scroll position (adjust this as needed)
-            const distance = target - start;
-            const duration = 2000; // Duration in ms (e.g., 2 seconds for slower scroll)
 
-            let startTime = null;
+    <script>
+        // Select all hero images
+        const heroImages = document.querySelectorAll('.hero-image');
 
-            // Function to animate the scroll
-            function animateScroll(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const scrollProgress = Math.min(timeElapsed / duration, 1); // Normalize to [0, 1]
+        // Function to change images with fade-in and fade-out
+        function changeHeroImage() {
+            // Remove "active" class from current image
+            heroImages[currentIndex].classList.remove('active');
 
-                // Ease-in-out timing function for smoothness
-                const ease = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+            // Update index to the next image
+            currentIndex = (currentIndex + 1) % heroImages.length;
 
-                // Calculate the current position
-                const currentPosition = start + (distance * ease(scrollProgress));
+            // Add "active" class to the next image
+            heroImages[currentIndex].classList.add('active');
+        }
 
-                // Scroll to the current position
-                window.scrollTo(0, currentPosition);
+        // Initially display the first image
+        heroImages[currentIndex].classList.add('active');
 
-                // Continue the animation until the duration is reached
-                if (timeElapsed < duration) {
-                    requestAnimationFrame(animateScroll);
+        // Change image every 6 seconds
+        setInterval(changeHeroImage, 6000);
+
+    </script>
+
+
+
+
+        <script>
+       let currentIndex = 0; // Start at the first image
+        const images = document.querySelectorAll('.hero-image'); // Select all hero images
+
+        let pressCount = 0; // Counter for button presses
+        const heroTitle = document.querySelector('h1');
+        const heroSubtitle = document.querySelector('h2');
+
+        // Original and new hero text
+        const originalTitle = "Motivated by Love<br>Evident in Service";
+        const originalSubtitle = "Welcome to Keitsleigh Primary School!";
+        const updatedTitle = "Driven by Passion<br>Committed to Excellence";
+        const updatedSubtitle = "Join Us on the Journey of Growth and Learning";
+
+        // Show the current image and hide others
+        function showImage(index) {
+            images.forEach((image, i) => {
+                image.classList.remove('active'); // Remove the active class
+                if (i === index) {
+                    image.classList.add('active'); // Add the active class to the current image
                 }
+            });
+        }
+
+        // Add fade-in effect to the text
+        function fadeInText() {
+            heroTitle.classList.add('fade');
+            heroSubtitle.classList.add('fade');
+            setTimeout(() => {
+                heroTitle.classList.remove('fade');
+                heroSubtitle.classList.remove('fade');
+            }, 2000); // Duration of the fade effect
+        }
+
+        // Update the hero text based on press count
+        function updateHeroText() {
+            if (pressCount % 3 === 0 && pressCount !== 0) { // After every 3 presses
+                heroTitle.innerHTML = updatedTitle; // Update title after 3 presses
+                heroSubtitle.innerHTML = updatedSubtitle; // Update subtitle after 3 presses
+            } else {
+                heroTitle.innerHTML = originalTitle; // Revert to original text after every other press count
+                heroSubtitle.innerHTML = originalSubtitle;
+            }
+            fadeInText(); // Fade in the hero text
+        }
+
+        // Next button functionality
+        document.getElementById('nextBtn').addEventListener('click', function () {
+            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image if we're at the last
+            showImage(currentIndex);
+
+            pressCount++; // Increment press count
+            updateHeroText(); // Update hero text based on press count
+        });
+
+        // Prev button functionality
+        document.getElementById('prevBtn').addEventListener('click', function () {
+            currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop back to the last image if we're at the first
+            showImage(currentIndex);
+
+            pressCount++; // Increment press count
+            updateHeroText(); // Update hero text based on press count
+        });
+
+        // Initially show the first image
+        showImage(currentIndex);
+
+         // Select all hero images
+
+            // Function to change images with fade-in and fade-out
+            function changeHeroImage() {
+                // Remove "active" class from current image
+                heroImages[currentIndex].classList.remove('active');
+
+                // Update index to the next image
+                currentIndex = (currentIndex + 1) % heroImages.length;
+
+                // Add "active" class to the next image
+                heroImages[currentIndex].classList.add('active');
             }
 
-            // Start the animation
-            requestAnimationFrame(animateScroll);
+            // Initially display the first image
+            heroImages[currentIndex].classList.add('active');
+
+            // Change image every 6 seconds
+            setInterval(changeHeroImage, 6000);
+
+        </script>
+
+
+
+<!-- Lazy Loading Hero Images -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const div = entry.target;
+                    div.style.backgroundImage = `url('${div.dataset.bg}')`;
+                    div.classList.remove("lazy-bg");
+                    observer.unobserve(div);
+                }
+            });
         });
+
+        lazyBackgrounds.forEach(div => observer.observe(div));
+    });
 </script>
+
+
+<script>
+    const apiBaseURL = 'https://app.kzdsolutions.co.za/api';
+
+    // Fetch and display newsletter posts
+    async function displayNewsletters() {
+        const container = document.querySelector('.row.g-4'); // Target your row container
+        container.innerHTML = ''; // Clear current content
+
+        try {
+            const response = await fetch(`${apiBaseURL}/NewslettersPost`);
+            const newsletters = await response.json();
+
+            newsletters.forEach(newsletter => {
+                const newsCard = `
+                <div class="col-md-4 fade-in">
+                    <div class="card">
+                        <img src="${newsletter.image}" class="card-img-top" alt="News Image" >
+                        <div class="card-body">
+                            <h5 class="card-title">${newsletter.title}</h5>
+                            <p class="card-text">${newsletter.description}</p>
+                        </div>
+                        <div class="card-footer">
+<span class="date">${formatDate(newsletter.date_created)}</span>
+                            <div class="like" onclick="likeNewsletter(${newsletter.id}, this)">
+                                <i class="fas fa-heart"></i><span>${newsletter.likes}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+                container.innerHTML += newsCard;
+            });
+        } catch (error) {
+            console.error('Error fetching newsletters:', error);
+           
+        }
+    }
+
+    // Function to format the date correctly
+    function formatDate(dateString) {
+        const date = new Date(dateString); // Parse the date string
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is zero-based
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`; // Format as YYYY-MM-DD
+    }
+
+
+
+    // Like a newsletter post
+    async function likeNewsletter(newsletterId, likeElement) {
+        const likedNewsletters = JSON.parse(localStorage.getItem('likedNewsletters')) || [];
+
+        // Check if the user has already liked this newsletter
+        if (likedNewsletters.includes(newsletterId)) {
+            return;
+        }
+
+        try {
+            const response = await fetch(`${apiBaseURL}/newsletter/${newsletterId}/like`, {
+                method: 'PUT',
+            });
+
+            if (response.ok) {
+                // Increment the like count visually
+                const likeCountElement = likeElement.querySelector('span');
+                likeCountElement.textContent = parseInt(likeCountElement.textContent) + 1;
+
+                // Save the newsletter ID in local storage to prevent multiple likes
+                likedNewsletters.push(newsletterId);
+                localStorage.setItem('likedNewsletters', JSON.stringify(likedNewsletters));
+            } else {
+                const data = await response.json();
+                console.log(data.message,'Failed to like the newsletter.')
+
+            }
+        } catch (error) {
+            console.error('Error liking newsletter:', error);
+        }
+    }
+
+</script>
+
 
 </body>
 

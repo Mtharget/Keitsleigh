@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Status Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007DC5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #7000c5;
+        }
+        .status-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #e7f3fe;
+            display: none; 
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Admission Status Tracker</h2>
+        <label for="trackNumber">Enter Learner ID or Registration Number</label>
+        <input type="text" id="trackNumber" placeholder="Learner ID or Registration Number" required>
+        <button id="trackButton" onclick="trackStatus()">Track Status</button>
+
+        <div class="status-container" id="statusContainer">
+            <h3>Status:</h3>
+            <p id="statusMessage"></p>
+            <p class="error" id="errorMessage"></p>
+        </div>
+    </div>
+
+    <script>
+        function trackStatus() {
+            const trackNumber = document.getElementById('trackNumber').value;
+            const statusContainer = document.getElementById('statusContainer');
+            const statusMessage = document.getElementById('statusMessage');
+            const errorMessage = document.getElementById('errorMessage');
+
+            statusMessage.innerHTML = '';
+            errorMessage.innerHTML = '';
+
+            if (trackNumber) {
+                fetch('https://app.kzdsolutions.co.za/check-status', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ trackNumber }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status !== null) { 
+                        statusMessage.innerHTML = `Current status: ${data.status}`;
+                        statusContainer.style.display = 'block'; 
+                    } else {
+                        errorMessage.innerHTML = 'No records found for the provided ID or Registration Number.';
+                        statusContainer.style.display = 'block'; 
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    errorMessage.innerHTML = 'An error occurred while fetching the status.';
+                    statusContainer.style.display = 'none'; 
+                });
+            } else {
+                errorMessage.innerHTML = 'Please enter a Learner ID or Registration Number.';
+                statusContainer.style.display = 'none'; 
+            }
+        }
+    </script>
+</body>
+</html>

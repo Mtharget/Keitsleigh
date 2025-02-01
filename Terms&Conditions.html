@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - Keitsleigh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.fade-in {
+            opacity: 1;
+        }
+  header {
+            /* background-color: #f4f4f4; */
+            padding: 10px 20px;
+        }
+        .terms-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .breadcrumb {
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb a {
+            margin-top: 70px;
+            text-decoration: none;
+            color: #0900FF;
+            position: relative;
+        }
+
+        .breadcrumb a:after {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #555;
+            border-bottom: 2px solid #555;
+            transform: rotate(-45deg);
+            margin: 0 8px;
+        }
+
+        .breadcrumb a:last-child:after {
+            content: "";
+        }
+
+        h1 {
+            color: #000;
+        }
+
+        section {
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h2 {
+            color: #000;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        section h2 i {
+            color: #0900FF;
+            margin-right: 10px;
+        }
+
+        section p {
+            text-align: left;
+        }
+
+        .btn-enroll {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0900FF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn-enroll:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("fade-in");
+
+            const sections = document.querySelectorAll("section");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="/">Home</a><a href="#">Terms and Conditions</a>
+        </nav>
+    </header>
+    <div class="terms-container">
+        <h1>Terms and Conditions</h1>
+
+        <section>
+            <h2><i class="fas fa-user-circle"></i> Enrollment Information</h2>
+            <p>We collect enrollment details, including student names, ages, and parent contact information, to
+                facilitate admission and provide tailored educational services.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-clipboard"></i> Use of Personal Information</h2>
+            <p>Your information is used to create student records, communicate with parents, and ensure the safety and
+                well-being of students.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-lock"></i> Privacy and Confidentiality</h2>
+            <p>We prioritize safeguarding your data. All information is stored securely and is accessed only by
+                authorized personnel.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-chart-bar"></i> Analytics and Feedback</h2>
+            <p>We use anonymous data to improve our educational programs and assess student progress effectively.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-globe"></i> Data Transfers</h2>
+            <p>In certain circumstances, student data may be transferred securely to comply with regulatory or
+                educational standards.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-folder-open"></i> Data Retention Policy</h2>
+            <p>We retain student records for the duration of their enrollment and as required by local education laws.
+            </p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-sliders-h"></i> Your Rights</h2>
+            <p>Parents have the right to access and update their child's records or request their deletion where
+                applicable.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-map-marker-alt"></i> State-Specific Policies</h2>
+            <p>We adhere to additional state-specific educational policies to ensure compliance and transparency.</p>
+        </section>
+
+      
+
+        <section>
+            <h2><i class="fas fa-envelope"></i> Contact Information</h2>
+            <p>For any inquiries or concerns about our terms, please contact the school administration.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-check-circle"></i> Acceptance of Terms</h2>
+            <p>By enrolling your child at Keitsleigh Primary School, you agree to abide by these Terms and Conditions.
+                If you do not agree with any of the terms, please do not proceed with the enrollment.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-sync-alt"></i> Changes to Terms and Conditions</h2>
+            <p>We reserve the right to update or modify these Terms and Conditions at any time. Any changes will be
+                communicated to parents/guardians via email or through the school's website.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-book"></i> School Policies</h2>
+            <p>In addition to these terms, you are required to follow the school’s internal policies, including but not
+                limited to attendance, dress code, and behavior expectations, which are available upon request.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-exclamation-circle"></i> Liability and Disclaimer</h2>
+            <p>Keitsleigh Primary School will not be held liable for any damages, injuries, or losses incurred during
+                school-related activities unless caused by negligence or intentional misconduct.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-cloud-meatball"></i> Force Majeure</h2>
+            <p>Keitsleigh Primary School is not responsible for any failure to perform due to unforeseen events beyond
+                our control, including but not limited to natural disasters, government actions, or pandemics.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-credit-card"></i> Refund and Cancellation Policy</h2>
+            <p>If you wish to cancel your child’s enrollment, please refer to the school's refund and cancellation
+                policy for detailed instructions. Refund eligibility may depend on the timing of cancellation.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-gavel"></i> Intellectual Property</h2>
+            <p>All educational materials, logos, and branding associated with Keitsleigh Primary School are the
+                intellectual property of the school and cannot be used without express permission.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-balance-scale"></i> Governing Law</h2>
+            <p>These Terms and Conditions are governed by the laws of the state in which Keitsleigh Primary School
+                operates. Any disputes will be resolved under the jurisdiction of the local courts.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-ambulance"></i> Emergency Protocols</h2>
+            <p>Keitsleigh Primary School has established protocols for dealing with emergencies. These include medical
+                emergencies, natural disasters, and lockdowns, and are communicated to parents/guardians as needed.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-users"></i> Third-Party Services</h2>
+            <p>We may engage third-party service providers for various educational and administrative functions. These
+                providers are held to the same privacy and confidentiality standards outlined in this document.</p>
+        </section>
+
+        <a href="Admission.html" class="btn-enroll">Enrol Now</a>
+
+    </div>
+   
+
+</body>
+
+</html>

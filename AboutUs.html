@@ -2,177 +2,332 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Keitsleigh Primary School</title>
 
-    <link rel="stylesheet" href="style.css">
+<!-- SEO Meta Tags -->
+<meta name="description" content="Learn about Keitsleigh Primary School, its mission, vision, values, and dedication to providing quality education. Shaping the future of young learners.">
+<meta name="keywords" content="Keitsleigh Primary School, About Keitsleigh School, mission, vision, quality education, primary school">
+<meta name="author" content="Keitsleigh Primary School">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph Meta Tags for Social Media -->
+<meta property="og:title" content="About Keitsleigh Primary School">
+<meta property="og:description" content="Discover the mission, vision, and values of Keitsleigh Primary School, committed to shaping bright futures through education.">
+<meta property="og:image" content="https://keitsleighprimary.co.za/images/logo.png">
+<meta property="og:url" content="https://keitsleighprimary.co.za/about.html">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Keitsleigh Primary School">
+<meta name="twitter:description" content="Learn more about Keitsleigh Primary School's dedication to education, mission, and values.">
+<meta name="twitter:image" content="https://keitsleighprimary.co.za/images/logo.png">
+
+<!-- External Stylesheets -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+        <link rel="icon" type="image/x-icon" href="../images/logo.png" >
+        
+        
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NNZ70BR7KQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NNZ70BR7KQ');
+</script>
+
+    <style>
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+    
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        button:hover {
+            background-color: #a78913;
+        }
+    
+        .status-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #e7f3fe;
+            display: none;
+            /* Initially hidden */
+        }
+    
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+
 </head>
 
-<!-- Loader Element (Initially Hidden) -->
-<div id="loader" class="loader" style="display: none;">
-    <i class="fas fa-spinner fa-spin"></i> Loading...
-</div>
-
-<!-- Link that triggers the loader -->
-<a href="#" id="loadLink">Click Me</a>
-
-
 <body>
-    <!-- Navbar -->
+    <!-- Responsive Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo">
+                <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo" loading="lazy">
             </a>
-            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span><i class="fa-solid fa-bars"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link " href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="AboutUs.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Admission.html">Admission</a>
+                        <a class="nav-link" href="Academic.html">Academics</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="News.html">News</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="admissionDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admission
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
+                            <li><a class="dropdown-item" href="Admission.html">Apply Now</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#trackApplicationModal">Track Application</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="Sport.html">Sport</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fees.html">Fees</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="ContactUs.html">Contact Us</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="btn enroll-now-btn" href="Admission.html">Enrol Now</a>
+                    </li>
                 </ul>
-                <span class="contact-number ms-3">
-                    <i class="fas fa-phone-alt"></i> 031 201 8014
+                <span class="contact-number ms-3 d-none d-lg-inline">
+                    <img src="./SchoolImages/Icon.png" alt="Phone Icon" width="20" height="20"> 031 201 8014
                 </span>
             </div>
         </div>
     </nav>
 
-<div class="containers about-us-container">
-    <div class="row align-items-center">
-        <!-- About Us Image (Left on large screens, top on smaller screens) -->
-        <div class="col-12 col-md-6 about-us-image">
-            <img src="./images/10001.png" alt="About Us Image" class="img-fluid" />
-        </div>
+    <!-- About Header -->
+    <header class="about-header">
+        <h1>ABOUT US</h1>
+    </header>
 
-        <!-- About Us Text (Right on large screens, bottom on smaller screens) -->
-        <div class="col-12 col-md-6 about-us-text">
-            <div class="about-us-title">About Us</div>
-            <div class="about-us-description">
-                The school has a long history of success and upholds the standards and educational philosophy of the
-                Seventh-Day Adventist Church. Keitsleigh Primary is a small but vibrant center of learning. By providing
-                a
-                warm, family atmosphere, we endeavor to provide our learners with memorable experiences that will enrich
-                their lives.
-            </div>
-            <div class="read-more-button">
-                <a href="#" class="read-more-text">Read more</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="custom-container py-1">
-<div class="custom-row">
-    <!-- Column 1: Visit school -->
-    <div class="custom-col d-flex justify-content-center align-items-center">
-        <div class="custom-text-center">
-            <div class="custom-icon-container">
-                <i class="fa-solid fa-school fa-2x text-white"></i>
-            </div>
-            <h5 class="custom-title text-warning">Visit school</h5>
-            <p class="custom-paragraph text-white">28 Keits Avenue, Berea, Durban 4001</p>
-        </div>
-    </div>
+        <section class="section container">
 
-    <!-- Column 2: Inquire -->
-    <div class="custom-col d-flex justify-content-center align-items-center">
-        <div class="custom-text-center">
-            <div class="custom-icon-container">
-                <i class="fa-solid fa-phone-volume fa-2x text-white"></i>
-            </div>
-            <h5 class="custom-title text-warning">Inquire</h5>
-            <p class="custom-paragraph text-white">Call : 031 201 8014</p>
-        </div>
-    </div>
+        <div class="section-content">
 
-    <!-- Column 3: Online application -->
-    <div class="custom-col d-flex justify-content-center align-items-center">
-        <div class="custom-text-center">
-            <div class="custom-icon-container">
-                <i class="fa-solid fa-paper-plane fa-2x text-white"></i>
-            </div>
-            <h5 class="custom-title text-warning">Online application</h5>
-            <p class="custom-paragraph text-light">Inspired, confident and ready.</p>
-        </div>
-    </div>
-</div>
-</div>
+            <div class="section-text" >
+                    <h2 style="margin-bottom: 100px;">Mission Statement</h2>
 
-    <!-- Footer -->
-    <footer class="footer" id="footer">
-        <div class="footer-container footer-content">
-            <div class="footer-logo">
-                <div class="logo-container">
-                    <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo" class="logo"
-                        style="height: 50px;">
+
+                <p style="text-align: left;margin-top: -70px;">To instil spiritual values by discipling pupils to accept and share Jesus as their Saviour in preparation for Christ's soon return, and to murture academic excellence, thereby equipping them for a diverse and changing society</p>
+
+
+                <h2 style="margin-bottom: 100px;">Vision Statement</h2>
+                
+                
+                <p style="text-align: left;margin-top: -70px;">To infuse heaven in the heart of every learner through a holistic Bible- integrated curriculum</p>
                 </div>
-                <p class="footer-description">Ketsleigh Primary School was founded on the 18th of January 1925 in Keits
-                    Avenue, Durban.</p>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <img src="./SchoolImages/DSC08896.jpg" alt="Mission Image" loading="lazy">
+
+
+                
+            </div>
+        </div>
+    </section>
+    <section class="section container" style="margin-top: -40px;">
+        <!-- <h2 style="margin-left: 490px;">Uniforms</h2> -->
+        <div class="section-content">
+                        <img src="./SchoolImages/DSC08923.jpg" alt="Uniform Image" loading="lazy">
+
+            <div class="section-text">
+                        <h2>Uniforms</h2>
+
+                <p style="text-align: left;">Students are required to wear the school uniform at all times. The uniform reflects the pride we take
+                    in our school and ensures equality among all students.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container" style="margin-top: 0px;">
+        <div class="section-content">
+
+            <div class="section-text">
+                <h2 style="margin-bottom: 20px;">School Hours and Punctuality</h2>
+
+                <p style="text-align: left;">Our school day starts at 07:30. For Grades R to 2 it ends at 12:30 from Monday to
+                    Friday. Grade 3 finishes at 13:00, while Grades 4 to 7 conclude at 14:00 from Monday to Thursday and at 13:00 on
+                    Friday. Students are expected to arrive on time and be ready for class. Punctuality is important to ensure a smooth
+                    and effective learning experience.</p>
+
+            </div>
+                        <img src="./SchoolImages/DSC09052.jpg" alt="School Hours Image" loading="lazy">
+
+        </div>
+    </section>
+
+    <section class="section container" >
+        <div class="section-content">
+                        <img src="./SchoolImages/DSC08941.jpg" alt="Attendance Image" loading="lazy">
+
+            <div class="section-text">
+                        <h2 style="margin-bottom: 20px;">Attendance</h2>
+
+                <p style="text-align: left;">Regular attendance is essential for academic success. We ask that parents notify the school in
+                    advance for any planned absences, and inform us promptly if a child is sick or unable to attend.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container" >
+        <div class="section-content">
+
+            <div class="section-text">
+                        <h2 style="margin-bottom: 20px;">General Rules</h2>
+
+                <p style="text-align: left;">Students are expected to respect the rules of the school, adhere to classroom conduct, and foster a
+                    positive environment by being kind and considerate to others.</p>
+            </div>
+                        <img src="./SchoolImages/DSC08959.jpg" alt="General Rules Image" loading="lazy">
+
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="section-content">
+                        <img src="./SchoolImages/DSC08979.jpg" alt="Progression Image" loading="lazy">
+
+            <div class="section-text">
+                        <h2 style="margin-bottom: 20px;">Progression and Promotion Requirements</h2>
+
+                <p style="text-align: left;">To progress to the next grade, students must meet academic benchmarks and demonstrate consistent
+                    effort. Teachers and staff work closely with parents to ensure that every child is supported in
+                    their academic journey.</p>
+            </div>
+
+        </div>
+      
+    </section>
+    <a class="btn" href="Admission.html"
+        style="background-color: #0900FF; color: white; border-radius: 50px; font-weight: bold; border: none; transition: background-color 0.3s, transform 0.3s; text-align: center; display: block; width: fit-content; margin: 0 auto; margin-bottom: 50px;">
+        Enrol Now
+    </a>
+
+    <!-- Modal -->
+    <div class="modal fade" id="trackApplicationModal" tabindex="-1" aria-labelledby="trackApplicationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="trackApplicationModalLabel">Admission Status Tracker</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="trackNumber">Enter Learner ID or Registration Number</label>
+                    <input type="text" id="trackNumber" placeholder="Learner ID or Registration Number" required>
+                    <button id="trackButton" onclick="trackStatus()">Track Status</button>
+    
+                    <div class="status-container" id="statusContainer">
+                        <h3>Status:</h3>
+                        <p id="statusMessage"></p>
+                        <p class="error" id="errorMessage"></p>
+                    </div>
                 </div>
             </div>
-            <div class="footer-links">
-                <h3>Support Links</h3>
-                <ul>
-                    <li><a href="AboutUs.html">About Us</a></li>
-                    <li><a href="Admission.html">Admissions</a></li>
-                    <li><a href="News.html">News</a></li>
-                    <li><a href="Gallery.html">Gallery</a></li>
-                    <li><a href="ContactUs.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p>Call us directly? </p>
-                <p><a href="tel:0312018014">031 201 8014</a></p>
-                </p>
-                <p>Need support?</p>
-                <p><a href="mailto:ketsleighschool@gmail.com">ketsleighschool@gmail.com</a></p>
-            </div>
-            <div class="footer-newsletter">
-                <h3>Subscribe to Our Newsletter</h3>
-                <p>Subscribe to our newsletter to get the latest news.</p>
-                <form action="#" method="POST">
-                    <input type="" name="email" placeholder="Enter your email" required>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
         </div>
-        <div class="footer-legal">
-            <a href="#">Privacy policy</a>
-            <a href="#">Terms and conditions</a>
-            <a href="#">Copyright</a>
-        </div>
-    </footer>
+    </div>
 
-    <script src="sc"></script>
-    <!-- Bootstrap Script -->
+    <div id="footer"></div>
+    <script src="footer.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        // Intersection Observer to add "visible" class when sections come into view
+        const sections = document.querySelectorAll('.section');
+
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarNav');
+
+            navbarToggler.addEventListener('click', function () {
+                // Toggle the 'no-scroll' class on the body
+                document.body.classList.toggle('no-scroll', navbarCollapse.classList.contains('show'));
+            });
+
+            // Listen for when the collapse menu is hidden
+            navbarCollapse.addEventListener('hidden.bs.collapse', function () {
+                document.body.classList.remove('no-scroll');
+            });
+
+            // Listen for when the collapse menu is shown
+            navbarCollapse.addEventListener('shown.bs.collapse', function () {
+                document.body.classList.add('no-scroll');
+            });
+        });
+    </script>
 </body>
 
 </html>
