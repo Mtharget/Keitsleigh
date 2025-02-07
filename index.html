@@ -221,51 +221,62 @@
     }
 }
 
-/* Mobile-Friendly */
-@media (max-width: 480px) {
-    .cookie-container {
-        width: 90%;
-        bottom: 15px;
-        right: 5%;
-        left: 5%;
-    }
-
-    .cookie-buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-        margin-top: 5px;
-    }
-}
-
-
-.cookie-banner {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
+/* General Styles */
+.cookie-banner,
 .cookie-modal {
-    display: none; /* Hidden by default */
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
+/* Cookie Banner */
+.cookie-banner {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%;
+    width: 400px;
+}
 
+/* Cookie Modal */
+.cookie-modal {
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    width: 400px;
+}
+
+/* Buttons */
+.cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Mobile-Friendly */
+@media (max-width: 480px) {
+    .cookie-banner,
+    .cookie-modal {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .cookie-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 5px;
+    }
+}
 
 
         
