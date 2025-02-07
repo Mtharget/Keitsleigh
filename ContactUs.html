@@ -85,15 +85,108 @@
             color: red;
             margin-top: 10px;
         }
+
+        /* WhatsApp Blinking Icon */
+#whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    animation: blink 1.5s infinite;
+    z-index: 1000;
+}
+
+#whatsapp-icon i {
+    font-size: 28px;
+}
+
+/* Blinking Animation */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* WhatsApp Chat Widget */
+.whatsapp-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-width: 90%;
+    font-family: Arial, sans-serif;
+    z-index: 999;
+    display: none;
+}
+
+.chat-header {
+    background-color: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+.chat-header i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.chat-body {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+}
+
+.message-container {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #25D366;
+    color: white;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    /* width: 100%; */
+}
 </style>
 
-<!-- Loader Element (Initially Hidden) -->
-<div id="loader" class="loader" style="display: none;">
-    <i class="fas fa-spinner fa-spin"></i> Loading...
-</div>
 
-<!-- Link that triggers the loader -->
-<a href="#" id="loadLink">Click Me</a>
+
+
 
 <body>
     <!-- Responsive Navbar -->
@@ -109,7 +202,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link " href="index.html">Home</a> <!-- Set "active" for the current page -->
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="AboutUs.html">About Us</a>
@@ -128,16 +221,16 @@
                                     data-bs-target="#trackApplicationModal">Track Application</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-right: 0px">
                         <a class="nav-link" href="Gallery.html">Gallery</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-right: 0px;">
                         <a class="nav-link" href="Sport.html">Sport</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-right: 0px;">
                         <a class="nav-link" href="fees.html">Fees</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-right: 100px;">
                         <a class="nav-link active" href="ContactUs.html">Contact Us</a>
                     </li>
                     <li class="nav-item">
@@ -147,6 +240,7 @@
                 <span class="contact-number ms-3 d-none d-lg-inline">
                     <img src="./SchoolImages/Icon.png" alt="Phone Icon" width="20" height="20"> 031 201 8014
                 </span>
+    
             </div>
         </div>
     </nav>
@@ -193,6 +287,26 @@
 
 
 
+<!-- Blinking WhatsApp Icon -->
+<div id="whatsapp-icon" onclick="toggleChat()">
+    <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- WhatsApp Chat Widget -->
+<div id="whatsapp-chat" class="whatsapp-chat">
+    <div class="chat-header" onclick="toggleChat()">
+        <i class="fab fa-whatsapp"></i>
+        <span>Let’s Chat on WhatsApp</span>
+    </div>
+    <div class="chat-body" id="chat-body">
+        <div id="message-container" class="message-container"></div>
+        <textarea placeholder="Write your message..." id="chat-input"></textarea>
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+
+
 
 
 <div id="footer"></div>
@@ -229,7 +343,55 @@
             </div>
         </div>
     </div>
-    
+
+
+    <!-- whatsapp -->
+
+    <script>
+        function toggleChat() {
+            const chatWidget = document.getElementById('whatsapp-chat');
+            chatWidget.style.display = chatWidget.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+
+<!-- Header Animation -->
+<script>
+    // Get the navbar element
+    const navbar = document.querySelector('.navbar');
+
+    // Store the last scroll position to detect scroll direction
+    let lastScrollTop = 0;
+
+    // Set an initial background color for the navbar
+    navbar.style.backgroundColor = 'transparent'; // Initial state
+
+    // Scroll threshold to detect when to switch to transparent background
+    const scrollThreshold = 50; // When scrolling up and the scroll position is less than this, set transparent
+
+    // Listen to the scroll event
+    window.addEventListener('scroll', function () {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Check if the user is scrolling down or up
+        if (currentScroll > lastScrollTop) {
+            // Scrolling down, set the background to white
+            navbar.style.backgroundColor = '#ffffff'; // White background
+        } else {
+            // Scrolling up, check if the user is near the top
+            if (currentScroll <= scrollThreshold) {
+                navbar.style.backgroundColor = 'transparent'; // Transparent background
+            } else {
+                navbar.style.backgroundColor = '#ffffff'; // Keep it white if scrolling up but not at the top yet
+            }
+        }
+
+        // Update the last scroll position
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+
+
+</script>
     
     <!-- JavaScript -->
     <script>

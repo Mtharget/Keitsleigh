@@ -18,26 +18,84 @@ body::-webkit-scrollbar {
 }
 
 
+@keyframes blinkBorder {
+  0% {
+    box-shadow: 0 0 0px rgba(255, 187, 51, 0.6);
+  }
 
-        /* Navbar Styles */
+  50% {
+    box-shadow: 0 0 5px 2px rgba(255, 187, 51, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 0px rgba(255, 187, 51, 0.6);
+  }
+}
+
+.blink-border-active {
+  animation: blinkBorder 1s infinite;
+}
+
+/* Initial state for the service cards (they are hidden by default) */
+.service-card {
+  opacity: 0;
+  transform: translateY(20px);
+  /* Slight movement down for the fade-in effect */
+  transition: opacity 2s ease-out, transform 2s ease-out;
+  /* Duration for fade-in effect */
+}
+
+/* When the card becomes visible */
+.service-card.show {
+  opacity: 1;
+  transform: translateY(0);
+  /* Cards move up to their original position */
+}
+
+
+
+        /* Navbar Styles
         .navbar {
           background-color: #ffffff;
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
           padding: 0.8rem 1.5rem;
           z-index: 1030;
-        }
+          text-align: left;
+
+        } */
+
+               
+                         /* Navbar styles */
+                         .navbar {
+                           background-color: transparent;
+                           /* Initial transparent background */
+                           /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+                           /* Optional, for shadow effect */
+                           padding: 0.8rem 1.5rem;
+                           z-index: 1030;
+                           text-align: left;
+                           transition: background-color 0.3s ease;
+                           /* Smooth transition when changing background */
+                         }
+                
+
+
+
     
         .navbar-brand img {
-          height: 85px;
+          height: 55px;
         }
         /* Global Navigation Link Styles */
-        .nav-link {
-          font-family: 'Manrope';
-          font-size: 16px;
-          color: #000;
-          margin: 0 10px;
-          transition: color 0.3s ease;
-        }
+            .nav-link {
+              font-family: 'Space Grotesk', sans-serif;
+              /* Apply Space Grotesk font */
+              font-size: 16px;
+              color: #000;
+              margin: 0 10px;
+              transition: color 0.3s ease;
+                        z-index: 1030;
+                                        font-weight: bold;
+            }
     
         .nav-link:hover {
           color: #007BFF;
@@ -53,8 +111,8 @@ body::-webkit-scrollbar {
                           color: #007BFF !important;
                           /* Set the active color */
                           font-weight: bold;
-          font-family: 'Manrope';                          /* Optional: Make the active link stand out more */
-                        }
+              font-family: 'Space Grotesk', sans-serif;
+                                    }
                                                     /* Ensure the dropdown toggle indicator is not affected by the active class */
                                                     .nav-link.dropdown-toggle.active::after {
                                                       color: inherit;
@@ -106,7 +164,10 @@ body::-webkit-scrollbar {
           display: inline-flex;
           align-items: center;
           gap: 5px;
-                    font-family: 'Manrope';
+                    /* font-family: 'Manrope'; */
+                      font-family: 'Space Grotesk', sans-serif;
+                        /* Apply Space Grotesk font */
+                                              font-weight: bold;
         }
     
         /* Responsive Adjustments */
@@ -189,11 +250,6 @@ body::-webkit-scrollbar {
 
 #nextBtn {
   right: 20px;
-}
-
-/* Add a fade-in effect to the text */
-.fade {
-  animation: fadeIn 0s ease-out;
 }
 
 @keyframes fadeIn {
@@ -406,27 +462,30 @@ body::-webkit-scrollbar {
   line-height: 1.6;
 }
 
+/* Ensure all buttons have the same height */
 .explore-button {
-  background-color: transparent;
-  color: #007BFF;
-  border: 1px solid #007BFF;
-  padding: 12px 20px;
+  padding: 12px 20px; /* Adjust padding for consistent button height */
   font-size: 16px;
-  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
   cursor: pointer;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  /* Ensures content stays centered */
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-  width: auto;
-  height: 40px;
-  /* Default width for larger screens */
+  align-items: center; /* Vertically center the text and arrow */
+  justify-content: center; /* Center the content inside the button */
+  height: 45px; /* Fix the height to make them all the same */
 }
 
 .explore-button:hover {
-  background-color: #007BFF;
-  color: white;
+  background-color: #0056b3;
+}
+
+/* Styling the hr for consistent line height */
+.service-info hr {
+  border: 0;
+  border-top: 1px solid #007bff;
+  margin: 10px 0; /* Adjust the margin to ensure consistent spacing between elements */
 }
 
 .explore-button span {
@@ -629,12 +688,13 @@ body::-webkit-scrollbar {
   padding: 10px 15px;
   /* Add padding for better usability */
   width: 100%;
+    height: 40px;
   /* Ensures it spans the container */
   max-width: 300px;
   /* Limits width for better aesthetics */
-  border: 2px solid #ffdd57;
+  border: 1px solid #ffdd57;
   /* Add a visible border for focus */
-  border-radius: 25px;
+  border-radius: 50px;
   /* Smooth rounded edges */
   background-color: #fff;
   /* Make the background white */
@@ -703,6 +763,40 @@ body::-webkit-scrollbar {
   color:#ffdd57
 }
 
+
+
+
+
+.newsletter-input {
+  padding: 0.8rem;
+  font-size: 16px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+}
+
+.newsletter-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.newsletter-button:hover {
+  background-color: #0056b3;
+}
+
+.newsletter-error {
+  font-size: 14px;
+  color: red;
+  margin-top: 10px;
+}
+
 /* Make sure text doesn't overflow on smaller devices */
 @media (max-width: 600px) {
   .footer-legal a {
@@ -712,6 +806,9 @@ body::-webkit-scrollbar {
     /* Ensure some spacing between links */
   }
 }
+
+
+
 
 
 /* Media Queries for Responsive Design */
@@ -751,56 +848,7 @@ body::-webkit-scrollbar {
     margin-top: 10px;
   }
 }
-/* Media Query for Small Screens */
-/*@media (max-width: 768px) {*/
-/*  .footer-legal {*/
-/*    flex-direction: column;*/
-    /* Stack links vertically */
-/*    gap: 10px;*/
-    /* Reduce gap between links */
-/*  }*/
-/*}*/
 
-
-/* Add fade-in animation */
-/*@keyframes fadeIn {*/
-/*  0% {*/
-/*    opacity: 0;*/
-/*  }*/
-
-/*  100% {*/
-/*    opacity: 1;*/
-/*  }*/
-/*}*/
-
-/* Optional: Customize delay or timing for elements */
-/*.footer-container {*/
-/*  animation: fadeIn 4s ease-out;*/
-/*}*/
-
-/* Optional: If you want to animate the footer content separately */
-/*.footer-logo,*/
-/*.footer-links,*/
-/*.footer-contact,*/
-/*.footer-newsletter {*/
-/*  animation: fadeIn 3s ease-out;*/
-/*}*/
-
-
-
-/*.scroll-arrow {*/
-/*  margin-top: 20px;*/
-/*  text-align: center;*/
-/*  animation: bounce 2s infinite;*/
-/*}*/
-
-
-
-
-
-
-
-/* Arrow */
 
 
 .scroll-arrow {
@@ -1002,19 +1050,11 @@ body::-webkit-scrollbar {
   animation: fadeInColumn 1.5s ease-in-out forwards;
   /* Column fade-in effect */
   padding: 15px;
+  height: 100px;
   /* Padding around columns */
 }
 
-/* Individual icon container */
-.custom-icon-container {
-  background-color: #007BFF;
-  border-radius: 50%;
-  padding: 10px;
-  margin-bottom: 15px;
-  display: inline-block;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  /* Shadow effect */
-}
+
 
 /* Custom text alignment */
 .custom-text-center {
@@ -1031,6 +1071,76 @@ body::-webkit-scrollbar {
   /* Yellow for the title */
   margin-bottom: 10px;
   /* Spacing between title and paragraph */
+} */
+
+.custom-col {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  /* Stack items vertically */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+  animation: fadeInColumn 1.5s ease-in-out forwards;
+  padding: 5px;
+  height: 30px;
+  /* Set height to 50px */
+  text-align: center;
+  /* Ensure content is centered */
+}
+
+/* Individual icon container */
+.custom-icon-container {
+  background-color: #007bff;
+  border-radius: 50%;
+  padding: 10px;
+  margin-bottom: 5px;
+  /* Reduced margin to fit better */
+  display: inline-block;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  order: -1;
+  /* Make sure the icon appears first */
+}
+
+/* Custom text alignment */
+.custom-text-center {
+  text-align: center;
+}
+
+.custom-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  /* Adjusted font size */
+  letter-spacing: 0.6px;
+  color: #FFF200;
+  /* Yellow for the title */
+  margin-bottom: 5px;
+  /* Reduced margin */
+}
+
+.custom-paragraph {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  /* Reduced font size for smaller container */
+  color: white;
+  line-height: 1.2;
+  margin: 0;
+  /* No extra space */
+}
+
+/* Hover effect for columns */
+.custom-col:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.custom-col:hover .custom-title {
+  color: #0900FF;
+  /* Change title color on hover */
 }
 
 .custom-paragraph {
@@ -2343,39 +2453,9 @@ p#countdown {
   overflow-x: hidden;
 }
 
-@keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-    overflow-x: hidden;
-  }
 
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-    overflow-x: hidden;
-  }
-}
 
-/* Table animation */
-.school-timetable {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  animation: fadeInTable 1s ease-out forwards;
-  opacity: 0;
-  overflow-x: hidden;
-}
 
-@keyframes fadeInTable {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
 
 .school-timetable th,
 .school-timetable td {
@@ -2681,7 +2761,7 @@ button {
 
 /* About Header Section */
 .about-fees {
-  margin-top: 65px;
+  margin-top: 0px;
   background: url('./SchoolImages/DSC08923.jpg') no-repeat center center/cover;
   color: white;
   text-align: center;
@@ -2695,7 +2775,7 @@ button {
 
 /* About Header Section */
 .about-header {
-  margin-top: 65px;
+  margin-top: 0px;
   background: url('./SchoolImages/DSC08959.jpg') no-repeat center center/cover;
   color: white;
   text-align: center;
@@ -2807,7 +2887,7 @@ button {
 
 /* About Header Section */
 .about-academic {
-  margin-top: 65px;
+  margin-top: 0px;
   background: url('./SchoolImages/DSC08932.jpg') no-repeat center center/cover;
   color: white;
   text-align: center;
@@ -2821,7 +2901,7 @@ button {
 
 /* About Header Section */
 .about-sport {
-  margin-top: 65px;
+  margin-top: 0px;
   background: url('./SchoolImages/Sport.jpg') no-repeat center center/cover;
   color: white;
   text-align: center;
@@ -2834,7 +2914,7 @@ button {
 }
 
 .about-gallery {
-  margin-top: 65px;
+  margin-top: 0px;
   background: url('./SchoolImages/DSC09057.jpg') no-repeat center center/cover;
   color: white;
   text-align: center;

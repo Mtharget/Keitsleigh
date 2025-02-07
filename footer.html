@@ -1,7 +1,13 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="style.css">
 </head>
+<style>
+	.footer.show {
+    bottom: 0; /* Slides up when scrolling down */
+}
+</style>
 <body><!-- Footer -->
 <footer class="footer" id="footer">
 <div class="footer-container footer-content">
@@ -10,7 +16,15 @@
 
 <p class="footer-description">Keitsleigh Primary School was founded on the 18th of January 1925 in 28 Keits Avenue, Durban.</p>
 
-<div class="social-icons"></div>
+<div class="social-icons">
+	<a href="https://web.facebook.com/profile.php?id=61572049763097" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+	<a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+	<a href="https://www.instagram.com/keitsleighprimary19/" class="social-icon"><i class="fab fa-instagram"></i></a>
+		<a href="https://www.tiktok.com/@keitsleighprimary5?lang=en" class="social-icon"><i class="fab fa-tiktok"></i></a>
+		<a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+
+	
+</div>
 </div>
 
 <div class="footer-links">
@@ -38,14 +52,20 @@
 </div>
 
 <div class="footer-newsletter">
-<h3>Subscribe to Our Newsletter</h3>
+	<h3 class="newsletter-title">Subscribe to Our Newsletter</h3>
 
-<p>Subscribe to our newsletter to get the latest news.</p>
+	<p class="newsletter-description">Subscribe to our newsletter to get the latest news.</p>
 
-<form id="subscribeForm" method="POST"><input id="email" name="email" placeholder="Enter your email" required="" type="email" /><button type="submit">Send</button></form>
+	<form id="subscribeForm" class="newsletter-form" method="POST">
+		<input id="email" name="email" class="newsletter-input" placeholder="Enter Your Mail" required="" type="email"
+			style="border-radius: 50px; height: 45px;" />
 
-<div id="newLettereror" style="color: red; margin-top: 10px;"></div>
+		<button type="submit" class="newsletter-button" style="height: 45px;">Send</button>
+	</form>
+
+	<div id="newLettereror" class="newsletter-error" style="color: red; margin-top: 10px;"></div>
 </div>
+
 </div>
 
 <!-- <div class="footer-legal">
@@ -54,6 +74,7 @@
 	<a class="modal-link" data-modal="terms-conditions" href="Terms&amp;Conditions.html">Terms and conditions</a>
     <a href="mailto:steven@kzdsolutions.co.za">Powered By KZD Solutions</a>
 </div> -->
+<hr>
 
 <div class="footer-legal">
 	<a class="modal-link" data-modal="privacy-policy" href="Copyright.html">Privacy Policy &amp; Copyright</a>

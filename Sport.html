@@ -95,59 +95,60 @@
 <body>
 <body>
     <!-- Responsive Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo" loading="lazy">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span><i class="fa-solid fa-bars"></i></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="AboutUs.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Academic.html">Academics</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="admissionDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Admission
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
-                            <li><a class="dropdown-item" href="Admission.html">Apply Now</a></li>
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#trackApplicationModal">Track Application</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="Sport.html">Sport</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="fees.html">Fees</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn enroll-now-btn" href="Admission.html">Enrol Now</a>
-                    </li>
-                </ul>
-                <span class="contact-number ms-3 d-none d-lg-inline">
-                    <img src="./SchoolImages/Icon.png" alt="Phone Icon" width="20" height="20"> 031 201 8014
-                </span>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="./images/Keitsleighschool-logo.png.png" alt="School Logo" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a> <!-- Set "active" for the current page -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AboutUs.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Academic.html">Academics</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="admissionDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Admission
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
+                        <li><a class="dropdown-item" href="Admission.html">Apply Now</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#trackApplicationModal">Track Application</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item" style="margin-right: 0px">
+                    <a class="nav-link" href="Gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item " style="margin-right: 0px;">
+                    <a class="nav-link active" href="Sport.html">Sport</a>
+                </li>
+                <li class="nav-item" style="margin-right: 0px;">
+                    <a class="nav-link" href="fees.html">Fees</a>
+                </li>
+                <li class="nav-item" style="margin-right: 100px;">
+                    <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn enroll-now-btn" href="Admission.html">Enrol Now</a>
+                </li>
+            </ul>
+            <span class="contact-number ms-3 d-none d-lg-inline">
+                <img src="./SchoolImages/Icon.png" alt="Phone Icon" width="20" height="20"> 031 201 8014
+            </span>
+
         </div>
-    </nav>
+    </div>
+</nav>
 
 
 
@@ -313,6 +314,45 @@
     </div>
 
 
+
+
+    <!-- header animation -->
+<script>
+    // Get the navbar element
+    const navbar = document.querySelector('.navbar');
+
+    // Store the last scroll position to detect scroll direction
+    let lastScrollTop = 0;
+
+    // Set an initial background color for the navbar
+    navbar.style.backgroundColor = 'transparent'; // Initial state
+
+    // Scroll threshold to detect when to switch to transparent background
+    const scrollThreshold = 50; // When scrolling up and the scroll position is less than this, set transparent
+
+    // Listen to the scroll event
+    window.addEventListener('scroll', function () {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Check if the user is scrolling down or up
+        if (currentScroll > lastScrollTop) {
+            // Scrolling down, set the background to white
+            navbar.style.backgroundColor = '#ffffff'; // White background
+        } else {
+            // Scrolling up, check if the user is near the top
+            if (currentScroll <= scrollThreshold) {
+                navbar.style.backgroundColor = 'transparent'; // Transparent background
+            } else {
+                navbar.style.backgroundColor = '#ffffff'; // Keep it white if scrolling up but not at the top yet
+            }
+        }
+
+        // Update the last scroll position
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+
+
+</script>
     <!-- JavaScript -->
     <script>
         function trackStatus() {

@@ -64,3 +64,31 @@ document.addEventListener("DOMContentLoaded", function () {
     // Call the footer loader function
     loadFooter();
 });
+
+
+// Blinking
+
+setInterval(function () {
+    const emailInput = document.getElementById('email');
+    emailInput.classList.add('blink-border-active');
+
+    setTimeout(function () {
+        emailInput.classList.remove('blink-border-active');
+    }, 1000); // Remove the class after 1 second to stop the blinking
+}, 3000); // Trigger every 5 seconds
+
+
+
+
+window.addEventListener("scroll", function () {
+    let footer = document.querySelector(".footer");
+    if (window.scrollY > 200) { // Show footer when scrolled past 200px
+        footer.classList.add("show");
+    } else {
+        footer.classList.remove("show");
+    }
+});
+
+
+
+

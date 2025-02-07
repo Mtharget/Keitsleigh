@@ -77,7 +77,9 @@
             font-size: 16px;
         }
         button:hover {
-            background-color: #a78913;
+            /* background-color: #007bff; */
+            color: #007bff;
+            border: 1px solid #000;
         }
         .status-container {
             margin-top: 20px;
@@ -118,7 +120,150 @@
     height: 100%; /* Prevent vertical scroll */
 }
 
+/* Cookie Consent Container */
+.cookie-container {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: "Arial", sans-serif;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
 
+/* Content inside the container */
+.cookie-content {
+    text-align: center;
+}
+
+/* Title */
+.cookie-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Description */
+.cookie-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Buttons Container */
+.cookie-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Buttons Styling */
+.btn {
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Customize Button */
+.btn.customize {
+    background: transparent;
+    border: 2px solid #ff9900;
+    color: #ff9900;
+}
+.btn.customize:hover {
+    background: #ff9900;
+    color: white;
+}
+
+/* Reject Button */
+.btn.reject {
+    background: transparent;
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+}
+.btn.reject:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Accept Button */
+.btn.accept {
+    background: #2ecc71;
+    color: white;
+}
+.btn.accept:hover {
+    background: #27ae60;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile-Friendly */
+@media (max-width: 480px) {
+    .cookie-container {
+        width: 90%;
+        bottom: 15px;
+        right: 5%;
+        left: 5%;
+    }
+
+    .cookie-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+
+.cookie-banner {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.cookie-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
 
 
 
@@ -159,16 +304,16 @@
                                 data-bs-target="#trackApplicationModal">Track Application</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style="margin-right: 0px">
                     <a class="nav-link" href="Gallery.html">Gallery</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style="margin-right: 0px;">
                     <a class="nav-link" href="Sport.html">Sport</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style="margin-right: 0px;">
                     <a class="nav-link" href="fees.html">Fees</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style="margin-right: 100px;">
                     <a class="nav-link" href="ContactUs.html">Contact Us</a>
                 </li>
                 <li class="nav-item">
@@ -237,6 +382,8 @@
                     <p>We understand the significant responsibility entrusted to us to help shape the future of the
                         young
                         people in our care.</p>
+                                            <hr>
+
                     <button class="explore-button" onclick="window.location.href='Academic.html';">
                         Explore
                         <span>&#10140;</span>
@@ -250,7 +397,8 @@
                 <img src="./SchoolImages/Sport2.jpg" alt="DayCare Education" loading="lazy">
                 <div class="service-info">
                     <h3>DayCare</h3>
-                    <p>"Inspire, Support, and Strengthen Children to Thrive Through Active Play and Learning"</p>
+                    <p>"Inspire, Support, and Strengthen Children to Thrive Through Active Play and Learning And Healthy Lifestyles"</p>
+                    <hr>
                 <button class="explore-button" onclick="window.location.href='Academic.html';">
                     Explore
                     <span>&#10140;</span>
@@ -267,6 +415,8 @@
                     <p>Encourage, motivate, and empower children to activate their full potential through physical
                         exercise.
                     </p>
+                                        <hr>
+
                 <button class="explore-button" onclick="window.location.href='Academic.html';">
                     Explore
                     <span>&#10140;</span>
@@ -288,7 +438,7 @@
     
             <!-- About Us Text (Right on large screens, bottom on smaller screens) -->
             <div class="col-12 col-md-6 about-us-text scroll-effect">
-                <div class="about-us-title">Why Join Us</div>
+                <div class="about-us-title">WHY JOIN US</div>
                 <div class="about-us-description">
                     The school has a long history of success and upholds the standards and educational philosophy of the
                     Seventh-Day Adventist Church. Keitsleigh Primary is a small but vibrant center of learning. By
@@ -376,7 +526,7 @@
                         </a>
                     </div>
                     <h5 class="custom-title text-warning">Online application</h5>
-                    <p class="custom-paragraph text-light">Inspired, confident and ready.</p>
+                    <p class="custom-paragraph text-light">JOIN US AND ENROL NOW.</p>
                 </div>
             </div>
         </div>
@@ -397,6 +547,37 @@
 </div>
 
 
+<div id="cookieConsent" class="cookie-container">
+    <div class="cookie-content">
+        <h3>🍪 We Value Your Privacy</h3>
+        <p>
+            We use cookies to enhance your experience, personalize content, and analyze our traffic.
+            Click "Accept All" to consent or customize your preferences.
+        </p>
+        <div class="cookie-buttons">
+            <button id="customizeCookies" class="btn customize">Customize</button>
+            <button id="rejectCookies" class="btn reject">Reject All</button>
+            <button id="acceptCookies" class="btn accept">Accept All</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Cookie Settings Modal (Initially Hidden)
+<div id="cookieSettings" class="cookie-modal">
+    <h2>Customize Cookie Preferences</h2>
+    <label><input type="checkbox" id="essentialCookies" checked disabled> Essential (Required)</label>
+    <label><input type="checkbox" id="analyticsCookies"> Analytics</label>
+    <label><input type="checkbox" id="adsCookies"> Advertising</label>
+
+    <button id="savePreferences">Save Preferences</button>
+    <button id="closeSettings">Close</button>
+</div> -->
+
+
+
 
         <!-- modal to track application -->
 
@@ -412,6 +593,198 @@
 
         <div id="footer"></div>
         <script src="footer.js"></script>
+
+
+
+        <!-- cookies -->
+<script>
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+            const cookieContainer = document.getElementById("cookieConsent");
+            const cookieSettings = document.getElementById("cookieSettings");
+
+            const acceptBtn = document.getElementById("acceptCookies");
+            const rejectBtn = document.getElementById("rejectCookies");
+            const customizeBtn = document.getElementById("customizeCookies");
+            const savePreferencesBtn = document.getElementById("savePreferences");
+            const closeSettingsBtn = document.getElementById("closeSettings");
+
+            const analyticsCheckbox = document.getElementById("analyticsCookies");
+            const adsCheckbox = document.getElementById("adsCookies");
+
+            // Open Customize Cookie Settings
+            customizeBtn.addEventListener("click", function () {
+                cookieSettings.style.display = "block";
+            });
+
+            // Close Cookie Settings
+            closeSettingsBtn.addEventListener("click", function () {
+                cookieSettings.style.display = "none";
+            });
+
+            // Accept All Cookies
+            acceptBtn.addEventListener("click", function () {
+                cookieContainer.style.display = "none";
+                console.log("All cookies accepted.");
+            });
+
+            // Reject All Cookies
+            rejectBtn.addEventListener("click", function () {
+                cookieContainer.style.display = "none";
+                console.log("All cookies rejected.");
+            });
+
+            // Save Custom Preferences
+            savePreferencesBtn.addEventListener("click", function () {
+                let preferences = {
+                    essential: true,
+                    analytics: analyticsCheckbox.checked,
+                    ads: adsCheckbox.checked
+                };
+
+                console.log("Saved Preferences:", preferences);
+                cookieSettings.style.display = "none";
+                cookieContainer.style.display = "none";
+            });
+        });
+
+</script>
+        <script>
+    //    document.addEventListener("DOMContentLoaded", function () {
+    //         const cookieContainer = document.getElementById("cookieConsent");
+    //         const acceptBtn = document.getElementById("acceptCookies");
+    //         const rejectBtn = document.getElementById("rejectCookies");
+    //         const customizeBtn = document.getElementById("customizeCookies");
+
+    //         // Check if user already accepted/rejected cookies
+    //         if (localStorage.getItem("cookieConsent") === "accepted" || localStorage.getItem("cookieConsent") === "rejected") {
+    //             cookieContainer.style.display = "none";
+    //         }
+
+    //         // Accept Cookies
+    //         acceptBtn.addEventListener("click", function () {
+    //             localStorage.setItem("cookieConsent", "accepted");
+    //             cookieContainer.style.display = "none";
+    //             console.log("Cookies accepted!");
+    //         });
+
+    //         // Reject Cookies
+    //         rejectBtn.addEventListener("click", function () {
+    //             localStorage.setItem("cookieConsent", "rejected");
+    //             cookieContainer.style.display = "none";
+    //             console.log("Cookies rejected!");
+    //         });
+
+    //         // Customize Cookies (You can extend this functionality)
+    //         customizeBtn.addEventListener("click", function () {
+    //             alert("Customize cookie settings (Feature to be added)");
+    //         });
+    //     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+            const cookieContainer = document.getElementById("cookieConsent");
+            const acceptBtn = document.getElementById("acceptCookies");
+            const rejectBtn = document.getElementById("rejectCookies");
+            const customizeBtn = document.getElementById("customizeCookies");
+
+            // Show cookie consent banner
+            cookieContainer.style.display = "block";
+
+            // Accept Cookies
+            acceptBtn.addEventListener("click", function () {
+                cookieContainer.style.display = "none";
+                console.log("Cookies accepted!");
+            });
+
+            // Reject Cookies
+            rejectBtn.addEventListener("click", function () {
+                cookieContainer.style.display = "none";
+                console.log("Cookies rejected!");
+            });
+
+            // Customize Cookies (Extend this with actual settings)
+            customizeBtn.addEventListener("click", function () {
+                alert("Customize cookie settings (Feature to be added)");
+            });
+        });
+
+
+
+        </script>
+
+
+        <!-- service card fade in -->
+
+
+        <script>
+       document.addEventListener("DOMContentLoaded", function () {
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            // Define the intersection observer
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Add the 'show' class to trigger fade-in with a slight delay for each card
+                        setTimeout(() => {
+                            entry.target.classList.add('show');
+                        }, index * 500); // Delay each card by 500ms (you can adjust this value)
+                        observer.unobserve(entry.target); // Stop observing once the element is visible
+                    }
+                });
+            }, {
+                threshold: 0.5  // Trigger when 50% of the card is in view
+            });
+
+            // Start observing each service card
+            serviceCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+
+
+        </script>
+
+
+
+<!-- Header Animation -->
+        <script>
+  // Get the navbar element
+    const navbar = document.querySelector('.navbar');
+
+    // Store the last scroll position to detect scroll direction
+    let lastScrollTop = 0;
+
+    // Set an initial background color for the navbar
+    navbar.style.backgroundColor = 'transparent'; // Initial state
+
+    // Scroll threshold to detect when to switch to transparent background
+    const scrollThreshold = 50; // When scrolling up and the scroll position is less than this, set transparent
+
+    // Listen to the scroll event
+    window.addEventListener('scroll', function () {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Check if the user is scrolling down or up
+        if (currentScroll > lastScrollTop) {
+            // Scrolling down, set the background to white
+            navbar.style.backgroundColor = '#ffffff'; // White background
+        } else {
+            // Scrolling up, check if the user is near the top
+            if (currentScroll <= scrollThreshold) {
+                navbar.style.backgroundColor = 'transparent'; // Transparent background
+            } else {
+                navbar.style.backgroundColor = '#ffffff'; // Keep it white if scrolling up but not at the top yet
+            }
+        }
+
+        // Update the last scroll position
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+
+          
+        </script>
 
 
 
