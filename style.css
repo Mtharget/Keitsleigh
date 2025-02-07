@@ -229,7 +229,7 @@ body::-webkit-scrollbar {
   border: none;
   font-size: 3rem;
   /* Adjust size of the arrow */
-  color: #007BFF;
+  color: #0900FF;
   cursor: pointer;
   transition: 0.3s;
 }
